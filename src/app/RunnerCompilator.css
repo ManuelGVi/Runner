@@ -1,0 +1,66 @@
+.runner-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+}
+
+.input-container {
+  flex: 1;
+  padding: 10px;
+  border-right: 1px solid #ccc;
+  box-sizing: border-box;
+  color:black;
+}
+
+.output-container {
+  flex: 1;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.code-input {
+  display: flex;
+}
+
+.line-numbers {
+  min-width: 40px; /* Ajusta según sea necesario */
+  padding-right: 10px;
+  text-align: right;
+  border-right: 1px solid #ccc;
+  box-sizing: border-box;
+  color: white;
+}
+
+textarea {
+  flex: 1;
+  padding: 10px;
+  resize: vertical;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.compile-button {
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.output-area {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  min-height: 100px; /* Ajusta según sea necesario */
+  overflow-y: auto;
+}
+
+.line-number {
+  padding: 5px;
+}
+
+/* Agrega más estilos según sea necesario */
