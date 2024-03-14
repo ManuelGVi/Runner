@@ -18,6 +18,63 @@ export default class CustomVisitor extends DictioVisitor {
 	  return this.visitChildren(ctx);
 	}
 
+    // Visit a parse tree produced by DictioParser#condif.
+	visitCondif(ctx) {
+        const conditionResult = this.visit(ctx.siono());
+
+        // Si la condición es verdadera, ejecuta el bloque de contenido dentro del 'if'.
+        if (conditionResult) {
+            return this.visit(ctx.content());
+        }
+        // Si hay un bloque 'else' y la condición es falsa, ejecuta el bloque 'else'.
+        else if (ctx.deotro()) {
+            return this.visit(ctx.deotro());
+        }
+      }
+  
+  
+      // Visit a parse tree produced by DictioParser#siono.
+      visitSiono(ctx) {
+         // Evaluar las dos expresiones.
+         const left = this.visit(ctx.expr(0));
+         const right = this.visit(ctx.expr(1));
+         let leftValue;
+         let rightValue;
+ 
+         if (isNaN(left)){
+             leftValue = this.memoria.get(left);
+         }else{
+             leftValue = left;
+         }
+         if (isNaN(right)){
+             rightValue = this.memoria.get(right);
+         }else{
+             rightValue = right;
+         }
+    // Obtener el operador.
+    const operator = ctx.op.type;
+
+    // Realizar la comparación basada en el operador.
+    switch (operator) {
+        case DictioParser.MAYORQUE:
+            return left > right;
+        case DictioParser.MENORQUE:
+            return left < right;
+        case DictioParser.IGUAL:
+            return left === right;
+        case DictioParser.DIFERENTE:
+            return left !== right;
+        default:
+            throw new Error("Operador desconocido: " + operator);
+    }
+      }
+  
+  
+      // Visit a parse tree produced by DictioParser#deotro.
+      visitDeotro(ctx) {
+        return this.visit(ctx.content());
+      }
+
 	visitImprime(ctx) {
         const texto = this.visit(ctx.textobteiner());
         const containsSemicolon = ctx.SC() !== null;

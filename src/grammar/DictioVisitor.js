@@ -18,6 +18,24 @@ export default class DictioVisitor extends antlr4.tree.ParseTreeVisitor {
 	}
 
 
+	// Visit a parse tree produced by DictioParser#condif.
+	visitCondif(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by DictioParser#siono.
+	visitSiono(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by DictioParser#deotro.
+	visitDeotro(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
 	// Visit a parse tree produced by DictioParser#imprime.
 	visitImprime(ctx) {
 	  return this.visitChildren(ctx);

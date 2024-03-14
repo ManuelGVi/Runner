@@ -2,7 +2,13 @@ grammar Dictio;
 
 main: LETS RUN LLAVEA content? LLAVEC;
 
-content: (imprime | declara | asigna)+;
+content: (condif|imprime | declara | asigna)+;
+
+condif: IF PARA siono PARC LLAVEA content LLAVEC deotro?;
+
+siono:expr op=(MAYORQUE|MENORQUE|IGUAL|DIFERENTE) expr ;
+
+deotro: ELSE LLAVEA content LLAVEC ;
 
 imprime: IMP PARA textobteiner (COMA expr)? PARC SC;
 
@@ -24,6 +30,8 @@ LETS:'lets';
 RUN:'run';
 COMP:'comp';
 IMP: 'imp';
+IF: 'si';
+ELSE:'sino';
 //MATEMATICOS
 ASTE:'*';
 DIA:'/';
@@ -41,4 +49,10 @@ PARC:')';
 SC:';';
 COMA:',';
 COMID:'"';
+//COSAS DEL IF 
+MAYORQUE:'>';
+MENORQUE:'<';
+IGUAL:'==';
+DIFERENTE:'!=';
+
 TEXTO: COMID ~["\r\n]* COMID;
