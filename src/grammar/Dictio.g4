@@ -6,11 +6,11 @@ content: (condif|imprime | declara | asigna)+;
 
 condif: IF PARA siono PARC LLAVEA content LLAVEC deotro?;
 
-siono:expr op=(MAYORQUE|MENORQUE|IGUAL|DIFERENTE) expr ;
+siono:expr op=(MAYORQUE|MENORQUE|IGUAL|DIFERENTE) expr|VERDAD|FALSO ;
 
 deotro: ELSE LLAVEA content LLAVEC ;
 
-imprime: IMP PARA textobteiner (COMA expr)? PARC SC;
+imprime: IMP PARA (textobteiner|expr) (COMA expr)? PARC SC;
 
 declara: COMP ID (EQU expr)? SC;
 
@@ -25,6 +25,7 @@ expr:
 ;
 textobteiner: TEXTO;
 WS:[ \t\r\n]+ -> skip;
+COMENTARIO:'//' ~[\r\n]* -> skip;
 //PALABRAS RESERVADAS
 LETS:'lets';
 RUN:'run';
@@ -32,6 +33,8 @@ COMP:'comp';
 IMP: 'imp';
 IF: 'si';
 ELSE:'sino';
+VERDAD:'true';
+FALSO:'false';
 //MATEMATICOS
 ASTE:'*';
 DIA:'/';

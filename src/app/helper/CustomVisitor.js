@@ -36,6 +36,9 @@ export default class CustomVisitor extends DictioVisitor {
       // Visit a parse tree produced by DictioParser#siono.
       visitSiono(ctx) {
          // Evaluar las dos expresiones.
+         if (ctx.VERDAD()){
+            return true;
+         }
          const left = this.visit(ctx.expr(0));
          const right = this.visit(ctx.expr(1));
          let leftValue;
@@ -78,28 +81,14 @@ export default class CustomVisitor extends DictioVisitor {
 	visitImprime(ctx) {
         const texto = this.visit(ctx.textobteiner());
         const containsSemicolon = ctx.SC() !== null;
-
-    if (!containsSemicolon) {
-        throw new Error("Falta el punto y coma al final de la instrucción de impresión");
-    }
         let resultado = texto;
         if (ctx.expr()) {
             const id = this.visit(ctx.expr()).getText;
                 resultado += this.visit(ctx.expr());
             } else {
                 // Manejar el caso en que el identificador no está definido
-                throw new Error(`La variable ${id} no está definida`);
+                resultado=texto;
             }
-        
-       /* if (ctx.ID()) {
-            const id = ctx.ID().getText();
-            if (this.memoria.has(id)) {
-                resultado += this.memoria.get(id);
-            } else {
-                // Manejar el caso en que el identificador no está definido
-                throw new Error(`La variable ${id} no está definida`);
-            }
-        }*/
         return resultado;
 	}
 
