@@ -30,8 +30,14 @@ export default class DictioVisitor extends antlr4.tree.ParseTreeVisitor {
 	}
 
 
-	// Visit a parse tree produced by DictioParser#deotro.
-	visitDeotro(ctx) {
+	// Visit a parse tree produced by DictioParser#deotroif.
+	visitDeotroif(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by DictioParser#deotrosimple.
+	visitDeotrosimple(ctx) {
 	  return this.visitChildren(ctx);
 	}
 

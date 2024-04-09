@@ -3,38 +3,43 @@
 import antlr4 from 'antlr4';
 import DictioVisitor from './DictioVisitor.js';
 
-const serializedATN = [4,1,30,111,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,
+const serializedATN = [4,1,30,124,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,
 4,2,5,7,5,2,6,7,6,2,7,7,7,2,8,7,8,2,9,7,9,1,0,1,0,1,0,1,0,3,0,25,8,0,1,0,
 1,0,1,1,1,1,1,1,1,1,4,1,33,8,1,11,1,12,1,34,1,2,1,2,1,2,1,2,1,2,1,2,1,2,
 1,2,3,2,45,8,2,1,3,1,3,1,3,1,3,1,3,1,3,3,3,53,8,3,1,4,1,4,1,4,1,4,1,4,1,
-5,1,5,1,5,1,5,3,5,64,8,5,1,5,1,5,3,5,68,8,5,1,5,1,5,1,5,1,6,1,6,1,6,1,6,
-3,6,77,8,6,1,6,1,6,1,7,1,7,1,7,1,7,1,7,1,8,1,8,3,8,88,8,8,1,8,1,8,1,8,1,
-8,1,8,1,8,3,8,96,8,8,1,8,1,8,1,8,1,8,1,8,1,8,5,8,104,8,8,10,8,12,8,107,9,
-8,1,9,1,9,1,9,0,1,16,10,0,2,4,6,8,10,12,14,16,18,0,3,1,0,26,29,1,0,11,12,
-1,0,13,14,116,0,20,1,0,0,0,2,32,1,0,0,0,4,36,1,0,0,0,6,52,1,0,0,0,8,54,1,
-0,0,0,10,59,1,0,0,0,12,72,1,0,0,0,14,80,1,0,0,0,16,95,1,0,0,0,18,108,1,0,
-0,0,20,21,5,3,0,0,21,22,5,4,0,0,22,24,5,16,0,0,23,25,3,2,1,0,24,23,1,0,0,
-0,24,25,1,0,0,0,25,26,1,0,0,0,26,27,5,17,0,0,27,1,1,0,0,0,28,33,3,4,2,0,
-29,33,3,10,5,0,30,33,3,12,6,0,31,33,3,14,7,0,32,28,1,0,0,0,32,29,1,0,0,0,
-32,30,1,0,0,0,32,31,1,0,0,0,33,34,1,0,0,0,34,32,1,0,0,0,34,35,1,0,0,0,35,
-3,1,0,0,0,36,37,5,7,0,0,37,38,5,21,0,0,38,39,3,6,3,0,39,40,5,22,0,0,40,41,
-5,16,0,0,41,42,3,2,1,0,42,44,5,17,0,0,43,45,3,8,4,0,44,43,1,0,0,0,44,45,
-1,0,0,0,45,5,1,0,0,0,46,47,3,16,8,0,47,48,7,0,0,0,48,49,3,16,8,0,49,53,1,
-0,0,0,50,53,5,9,0,0,51,53,5,10,0,0,52,46,1,0,0,0,52,50,1,0,0,0,52,51,1,0,
-0,0,53,7,1,0,0,0,54,55,5,8,0,0,55,56,5,16,0,0,56,57,3,2,1,0,57,58,5,17,0,
-0,58,9,1,0,0,0,59,60,5,6,0,0,60,63,5,21,0,0,61,64,3,18,9,0,62,64,3,16,8,
-0,63,61,1,0,0,0,63,62,1,0,0,0,64,67,1,0,0,0,65,66,5,24,0,0,66,68,3,16,8,
-0,67,65,1,0,0,0,67,68,1,0,0,0,68,69,1,0,0,0,69,70,5,22,0,0,70,71,5,23,0,
-0,71,11,1,0,0,0,72,73,5,5,0,0,73,76,5,19,0,0,74,75,5,15,0,0,75,77,3,16,8,
-0,76,74,1,0,0,0,76,77,1,0,0,0,77,78,1,0,0,0,78,79,5,23,0,0,79,13,1,0,0,0,
-80,81,5,19,0,0,81,82,5,15,0,0,82,83,3,16,8,0,83,84,5,23,0,0,84,15,1,0,0,
-0,85,87,6,8,-1,0,86,88,5,13,0,0,87,86,1,0,0,0,87,88,1,0,0,0,88,89,1,0,0,
-0,89,96,5,20,0,0,90,91,5,21,0,0,91,92,3,16,8,0,92,93,5,22,0,0,93,96,1,0,
-0,0,94,96,5,19,0,0,95,85,1,0,0,0,95,90,1,0,0,0,95,94,1,0,0,0,96,105,1,0,
-0,0,97,98,10,5,0,0,98,99,7,1,0,0,99,104,3,16,8,6,100,101,10,4,0,0,101,102,
-7,2,0,0,102,104,3,16,8,5,103,97,1,0,0,0,103,100,1,0,0,0,104,107,1,0,0,0,
-105,103,1,0,0,0,105,106,1,0,0,0,106,17,1,0,0,0,107,105,1,0,0,0,108,109,5,
-30,0,0,109,19,1,0,0,0,12,24,32,34,44,52,63,67,76,87,95,103,105];
+4,1,4,1,4,1,4,3,4,64,8,4,1,4,1,4,1,4,1,4,1,4,3,4,71,8,4,1,5,1,5,1,5,1,5,
+3,5,77,8,5,1,5,1,5,3,5,81,8,5,1,5,1,5,1,5,1,6,1,6,1,6,1,6,3,6,90,8,6,1,6,
+1,6,1,7,1,7,1,7,1,7,1,7,1,8,1,8,3,8,101,8,8,1,8,1,8,1,8,1,8,1,8,1,8,3,8,
+109,8,8,1,8,1,8,1,8,1,8,1,8,1,8,5,8,117,8,8,10,8,12,8,120,9,8,1,9,1,9,1,
+9,0,1,16,10,0,2,4,6,8,10,12,14,16,18,0,3,1,0,26,29,1,0,11,12,1,0,13,14,131,
+0,20,1,0,0,0,2,32,1,0,0,0,4,36,1,0,0,0,6,52,1,0,0,0,8,70,1,0,0,0,10,72,1,
+0,0,0,12,85,1,0,0,0,14,93,1,0,0,0,16,108,1,0,0,0,18,121,1,0,0,0,20,21,5,
+3,0,0,21,22,5,4,0,0,22,24,5,16,0,0,23,25,3,2,1,0,24,23,1,0,0,0,24,25,1,0,
+0,0,25,26,1,0,0,0,26,27,5,17,0,0,27,1,1,0,0,0,28,33,3,4,2,0,29,33,3,10,5,
+0,30,33,3,12,6,0,31,33,3,14,7,0,32,28,1,0,0,0,32,29,1,0,0,0,32,30,1,0,0,
+0,32,31,1,0,0,0,33,34,1,0,0,0,34,32,1,0,0,0,34,35,1,0,0,0,35,3,1,0,0,0,36,
+37,5,7,0,0,37,38,5,21,0,0,38,39,3,6,3,0,39,40,5,22,0,0,40,41,5,16,0,0,41,
+42,3,2,1,0,42,44,5,17,0,0,43,45,3,8,4,0,44,43,1,0,0,0,44,45,1,0,0,0,45,5,
+1,0,0,0,46,47,3,16,8,0,47,48,7,0,0,0,48,49,3,16,8,0,49,53,1,0,0,0,50,53,
+5,9,0,0,51,53,5,10,0,0,52,46,1,0,0,0,52,50,1,0,0,0,52,51,1,0,0,0,53,7,1,
+0,0,0,54,55,5,8,0,0,55,56,5,7,0,0,56,57,5,21,0,0,57,58,3,6,3,0,58,59,5,22,
+0,0,59,60,5,16,0,0,60,61,3,2,1,0,61,63,5,17,0,0,62,64,3,8,4,0,63,62,1,0,
+0,0,63,64,1,0,0,0,64,71,1,0,0,0,65,66,5,8,0,0,66,67,5,16,0,0,67,68,3,2,1,
+0,68,69,5,17,0,0,69,71,1,0,0,0,70,54,1,0,0,0,70,65,1,0,0,0,71,9,1,0,0,0,
+72,73,5,6,0,0,73,76,5,21,0,0,74,77,3,18,9,0,75,77,3,16,8,0,76,74,1,0,0,0,
+76,75,1,0,0,0,77,80,1,0,0,0,78,79,5,24,0,0,79,81,3,16,8,0,80,78,1,0,0,0,
+80,81,1,0,0,0,81,82,1,0,0,0,82,83,5,22,0,0,83,84,5,23,0,0,84,11,1,0,0,0,
+85,86,5,5,0,0,86,89,5,19,0,0,87,88,5,15,0,0,88,90,3,16,8,0,89,87,1,0,0,0,
+89,90,1,0,0,0,90,91,1,0,0,0,91,92,5,23,0,0,92,13,1,0,0,0,93,94,5,19,0,0,
+94,95,5,15,0,0,95,96,3,16,8,0,96,97,5,23,0,0,97,15,1,0,0,0,98,100,6,8,-1,
+0,99,101,5,13,0,0,100,99,1,0,0,0,100,101,1,0,0,0,101,102,1,0,0,0,102,109,
+5,20,0,0,103,104,5,21,0,0,104,105,3,16,8,0,105,106,5,22,0,0,106,109,1,0,
+0,0,107,109,5,19,0,0,108,98,1,0,0,0,108,103,1,0,0,0,108,107,1,0,0,0,109,
+118,1,0,0,0,110,111,10,5,0,0,111,112,7,1,0,0,112,117,3,16,8,6,113,114,10,
+4,0,0,114,115,7,2,0,0,115,117,3,16,8,5,116,110,1,0,0,0,116,113,1,0,0,0,117,
+120,1,0,0,0,118,116,1,0,0,0,118,119,1,0,0,0,119,17,1,0,0,0,120,118,1,0,0,
+0,121,122,5,30,0,0,122,19,1,0,0,0,14,24,32,34,44,52,63,70,76,80,89,100,108,
+116,118];
 
 
 const atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
@@ -285,16 +290,55 @@ export default class DictioParser extends antlr4.Parser {
 	deotro() {
 	    let localctx = new DeotroContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 8, DictioParser.RULE_deotro);
+	    var _la = 0;
 	    try {
-	        this.enterOuterAlt(localctx, 1);
-	        this.state = 54;
-	        this.match(DictioParser.ELSE);
-	        this.state = 55;
-	        this.match(DictioParser.LLAVEA);
-	        this.state = 56;
-	        this.content();
-	        this.state = 57;
-	        this.match(DictioParser.LLAVEC);
+	        this.state = 70;
+	        this._errHandler.sync(this);
+	        var la_ = this._interp.adaptivePredict(this._input,6,this._ctx);
+	        switch(la_) {
+	        case 1:
+	            localctx = new DeotroifContext(this, localctx);
+	            this.enterOuterAlt(localctx, 1);
+	            this.state = 54;
+	            this.match(DictioParser.ELSE);
+	            this.state = 55;
+	            this.match(DictioParser.IF);
+	            this.state = 56;
+	            this.match(DictioParser.PARA);
+	            this.state = 57;
+	            this.siono();
+	            this.state = 58;
+	            this.match(DictioParser.PARC);
+	            this.state = 59;
+	            this.match(DictioParser.LLAVEA);
+	            this.state = 60;
+	            this.content();
+	            this.state = 61;
+	            this.match(DictioParser.LLAVEC);
+	            this.state = 63;
+	            this._errHandler.sync(this);
+	            _la = this._input.LA(1);
+	            if(_la===8) {
+	                this.state = 62;
+	                this.deotro();
+	            }
+
+	            break;
+
+	        case 2:
+	            localctx = new DeotrosimpleContext(this, localctx);
+	            this.enterOuterAlt(localctx, 2);
+	            this.state = 65;
+	            this.match(DictioParser.ELSE);
+	            this.state = 66;
+	            this.match(DictioParser.LLAVEA);
+	            this.state = 67;
+	            this.content();
+	            this.state = 68;
+	            this.match(DictioParser.LLAVEC);
+	            break;
+
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -317,40 +361,40 @@ export default class DictioParser extends antlr4.Parser {
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 59;
+	        this.state = 72;
 	        this.match(DictioParser.IMP);
-	        this.state = 60;
+	        this.state = 73;
 	        this.match(DictioParser.PARA);
-	        this.state = 63;
+	        this.state = 76;
 	        this._errHandler.sync(this);
 	        switch(this._input.LA(1)) {
 	        case 30:
-	            this.state = 61;
+	            this.state = 74;
 	            this.textobteiner();
 	            break;
 	        case 13:
 	        case 19:
 	        case 20:
 	        case 21:
-	            this.state = 62;
+	            this.state = 75;
 	            this.expr(0);
 	            break;
 	        default:
 	            throw new antlr4.error.NoViableAltException(this);
 	        }
-	        this.state = 67;
+	        this.state = 80;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
 	        if(_la===24) {
-	            this.state = 65;
+	            this.state = 78;
 	            this.match(DictioParser.COMA);
-	            this.state = 66;
+	            this.state = 79;
 	            this.expr(0);
 	        }
 
-	        this.state = 69;
+	        this.state = 82;
 	        this.match(DictioParser.PARC);
-	        this.state = 70;
+	        this.state = 83;
 	        this.match(DictioParser.SC);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -374,21 +418,21 @@ export default class DictioParser extends antlr4.Parser {
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 72;
+	        this.state = 85;
 	        this.match(DictioParser.COMP);
-	        this.state = 73;
+	        this.state = 86;
 	        this.match(DictioParser.ID);
-	        this.state = 76;
+	        this.state = 89;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
 	        if(_la===15) {
-	            this.state = 74;
+	            this.state = 87;
 	            this.match(DictioParser.EQU);
-	            this.state = 75;
+	            this.state = 88;
 	            this.expr(0);
 	        }
 
-	        this.state = 78;
+	        this.state = 91;
 	        this.match(DictioParser.SC);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -411,13 +455,13 @@ export default class DictioParser extends antlr4.Parser {
 	    this.enterRule(localctx, 14, DictioParser.RULE_asigna);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 80;
+	        this.state = 93;
 	        this.match(DictioParser.ID);
-	        this.state = 81;
+	        this.state = 94;
 	        this.match(DictioParser.EQU);
-	        this.state = 82;
+	        this.state = 95;
 	        this.expr(0);
-	        this.state = 83;
+	        this.state = 96;
 	        this.match(DictioParser.SC);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -447,7 +491,7 @@ export default class DictioParser extends antlr4.Parser {
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 95;
+	        this.state = 108;
 	        this._errHandler.sync(this);
 	        switch(this._input.LA(1)) {
 	        case 13:
@@ -456,60 +500,60 @@ export default class DictioParser extends antlr4.Parser {
 	            this._ctx = localctx;
 	            _prevctx = localctx;
 
-	            this.state = 87;
+	            this.state = 100;
 	            this._errHandler.sync(this);
 	            _la = this._input.LA(1);
 	            if(_la===13) {
-	                this.state = 86;
+	                this.state = 99;
 	                this.match(DictioParser.RES);
 	            }
 
-	            this.state = 89;
+	            this.state = 102;
 	            this.match(DictioParser.INT);
 	            break;
 	        case 21:
 	            localctx = new ParensContext(this, localctx);
 	            this._ctx = localctx;
 	            _prevctx = localctx;
-	            this.state = 90;
+	            this.state = 103;
 	            this.match(DictioParser.PARA);
-	            this.state = 91;
+	            this.state = 104;
 	            this.expr(0);
-	            this.state = 92;
+	            this.state = 105;
 	            this.match(DictioParser.PARC);
 	            break;
 	        case 19:
 	            localctx = new IdContext(this, localctx);
 	            this._ctx = localctx;
 	            _prevctx = localctx;
-	            this.state = 94;
+	            this.state = 107;
 	            this.match(DictioParser.ID);
 	            break;
 	        default:
 	            throw new antlr4.error.NoViableAltException(this);
 	        }
 	        this._ctx.stop = this._input.LT(-1);
-	        this.state = 105;
+	        this.state = 118;
 	        this._errHandler.sync(this);
-	        var _alt = this._interp.adaptivePredict(this._input,11,this._ctx)
+	        var _alt = this._interp.adaptivePredict(this._input,13,this._ctx)
 	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
 	            if(_alt===1) {
 	                if(this._parseListeners!==null) {
 	                    this.triggerExitRuleEvent();
 	                }
 	                _prevctx = localctx;
-	                this.state = 103;
+	                this.state = 116;
 	                this._errHandler.sync(this);
-	                var la_ = this._interp.adaptivePredict(this._input,10,this._ctx);
+	                var la_ = this._interp.adaptivePredict(this._input,12,this._ctx);
 	                switch(la_) {
 	                case 1:
 	                    localctx = new MulDivContext(this, new ExprContext(this, _parentctx, _parentState));
 	                    this.pushNewRecursionContext(localctx, _startState, DictioParser.RULE_expr);
-	                    this.state = 97;
+	                    this.state = 110;
 	                    if (!( this.precpred(this._ctx, 5))) {
 	                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 5)");
 	                    }
-	                    this.state = 98;
+	                    this.state = 111;
 	                    localctx.operation = this._input.LT(1);
 	                    _la = this._input.LA(1);
 	                    if(!(_la===11 || _la===12)) {
@@ -519,18 +563,18 @@ export default class DictioParser extends antlr4.Parser {
 	                    	this._errHandler.reportMatch(this);
 	                        this.consume();
 	                    }
-	                    this.state = 99;
+	                    this.state = 112;
 	                    this.expr(6);
 	                    break;
 
 	                case 2:
 	                    localctx = new AddsubContext(this, new ExprContext(this, _parentctx, _parentState));
 	                    this.pushNewRecursionContext(localctx, _startState, DictioParser.RULE_expr);
-	                    this.state = 100;
+	                    this.state = 113;
 	                    if (!( this.precpred(this._ctx, 4))) {
 	                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 4)");
 	                    }
-	                    this.state = 101;
+	                    this.state = 114;
 	                    localctx.operation = this._input.LT(1);
 	                    _la = this._input.LA(1);
 	                    if(!(_la===13 || _la===14)) {
@@ -540,15 +584,15 @@ export default class DictioParser extends antlr4.Parser {
 	                    	this._errHandler.reportMatch(this);
 	                        this.consume();
 	                    }
-	                    this.state = 102;
+	                    this.state = 115;
 	                    this.expr(5);
 	                    break;
 
 	                } 
 	            }
-	            this.state = 107;
+	            this.state = 120;
 	            this._errHandler.sync(this);
-	            _alt = this._interp.adaptivePredict(this._input,11,this._ctx);
+	            _alt = this._interp.adaptivePredict(this._input,13,this._ctx);
 	        }
 
 	    } catch( error) {
@@ -572,7 +616,7 @@ export default class DictioParser extends antlr4.Parser {
 	    this.enterRule(localctx, 18, DictioParser.RULE_textobteiner);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 108;
+	        this.state = 121;
 	        this.match(DictioParser.TEXTO);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -888,6 +932,78 @@ class DeotroContext extends antlr4.ParserRuleContext {
         this.ruleIndex = DictioParser.RULE_deotro;
     }
 
+
+	 
+		copyFrom(ctx) {
+			super.copyFrom(ctx);
+		}
+
+}
+
+
+class DeotroifContext extends DeotroContext {
+
+    constructor(parser, ctx) {
+        super(parser);
+        super.copyFrom(ctx);
+    }
+
+	ELSE() {
+	    return this.getToken(DictioParser.ELSE, 0);
+	};
+
+	IF() {
+	    return this.getToken(DictioParser.IF, 0);
+	};
+
+	PARA() {
+	    return this.getToken(DictioParser.PARA, 0);
+	};
+
+	siono() {
+	    return this.getTypedRuleContext(SionoContext,0);
+	};
+
+	PARC() {
+	    return this.getToken(DictioParser.PARC, 0);
+	};
+
+	LLAVEA() {
+	    return this.getToken(DictioParser.LLAVEA, 0);
+	};
+
+	content() {
+	    return this.getTypedRuleContext(ContentContext,0);
+	};
+
+	LLAVEC() {
+	    return this.getToken(DictioParser.LLAVEC, 0);
+	};
+
+	deotro() {
+	    return this.getTypedRuleContext(DeotroContext,0);
+	};
+
+	accept(visitor) {
+	    if ( visitor instanceof DictioVisitor ) {
+	        return visitor.visitDeotroif(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
+
+}
+
+DictioParser.DeotroifContext = DeotroifContext;
+
+class DeotrosimpleContext extends DeotroContext {
+
+    constructor(parser, ctx) {
+        super(parser);
+        super.copyFrom(ctx);
+    }
+
 	ELSE() {
 	    return this.getToken(DictioParser.ELSE, 0);
 	};
@@ -906,7 +1022,7 @@ class DeotroContext extends antlr4.ParserRuleContext {
 
 	accept(visitor) {
 	    if ( visitor instanceof DictioVisitor ) {
-	        return visitor.visitDeotro(this);
+	        return visitor.visitDeotrosimple(this);
 	    } else {
 	        return visitor.visitChildren(this);
 	    }
@@ -915,7 +1031,7 @@ class DeotroContext extends antlr4.ParserRuleContext {
 
 }
 
-
+DictioParser.DeotrosimpleContext = DeotrosimpleContext;
 
 class ImprimeContext extends antlr4.ParserRuleContext {
 

@@ -39,6 +39,9 @@ export default class CustomVisitor extends DictioVisitor {
          if (ctx.VERDAD()){
             return true;
          }
+         if (ctx.FALSO()){
+            return false;
+         }
          const left = this.visit(ctx.expr(0));
          const right = this.visit(ctx.expr(1));
          let leftValue;
@@ -72,11 +75,27 @@ export default class CustomVisitor extends DictioVisitor {
     }
       }
   
+  // Visit a parse tree produced by DictioParser#deotroif.
+	visitDeotroif(ctx) {
+        const conditionResult = this.visit(ctx.siono());
+
+        // Si la condición es verdadera, ejecuta el bloque de contenido dentro del 'if'.
+        if (conditionResult) {
+            return this.visit(ctx.content());
+        }
+        // Si hay un bloque 'else' y la condición es falsa, ejecuta el bloque 'else'.
+        else if (ctx.deotro()) {
+            return this.visit(ctx.deotro());
+        }
+      }
   
-      // Visit a parse tree produced by DictioParser#deotro.
-      visitDeotro(ctx) {
+  
+      // Visit a parse tree produced by DictioParser#deotrosimple.
+      visitDeotrosimple(ctx) {
         return this.visit(ctx.content());
       }
+  
+      // Visit a parse tree produced by DictioParser#deotro.
 
 	visitImprime(ctx) {
         const texto = this.visit(ctx.textobteiner());

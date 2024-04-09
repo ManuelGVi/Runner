@@ -8,7 +8,9 @@ condif: IF PARA siono PARC LLAVEA content LLAVEC deotro?;
 
 siono:expr op=(MAYORQUE|MENORQUE|IGUAL|DIFERENTE) expr|VERDAD|FALSO ;
 
-deotro: ELSE LLAVEA content LLAVEC ;
+deotro: 
+ELSE IF PARA siono PARC LLAVEA content LLAVEC deotro? #deotroif
+|ELSE LLAVEA content LLAVEC #deotrosimple ;
 
 imprime: IMP PARA (textobteiner|expr) (COMA expr)? PARC SC;
 
