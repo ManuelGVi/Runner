@@ -2,17 +2,25 @@ grammar Dictio;
 
 main: LETS RUN LLAVEA content? LLAVEC;
 
-content: (condif|imprime | declara | asigna)+;
+content: (condif|mientras|imprime | declara | asigna)+;
 
 condif: IF PARA siono PARC LLAVEA content LLAVEC deotro?;
 
-siono:expr op=(MAYORQUE|MENORQUE|IGUAL|DIFERENTE) expr|VERDAD|FALSO ;
+mientras: WHILE PARA siono PARC LLAVEA content cambio? LLAVEC;
+
+siono:
+siono op=(AND|OR)+ siono #andor
+|expr op=(MAYORQUE|MENORQUE|MAYORIGUAL|MENORIGUAL|IGUAL|DIFERENTE) expr #comparaciones
+|(VERDAD|FALSO)#verdaderofalso
+|PARA siono PARC #condiparens;
 
 deotro: 
 ELSE IF PARA siono PARC LLAVEA content LLAVEC deotro? #deotroif
 |ELSE LLAVEA content LLAVEC #deotrosimple ;
 
-imprime: IMP PARA (textobteiner|expr) (COMA expr)? PARC SC;
+cambio:ID (INCREMENTO|DECREMENTO) SC;
+
+imprime: IMP PARA (textobteiner|expr) (COMA (textobteiner|expr))* PARC SC;
 
 declara: COMP ID (EQU expr)? SC;
 
@@ -35,6 +43,7 @@ COMP:'comp';
 IMP: 'imp';
 IF: 'si';
 ELSE:'sino';
+WHILE: 'mientras';
 VERDAD:'true';
 FALSO:'false';
 //MATEMATICOS
@@ -47,7 +56,7 @@ EQU: '=';
 LLAVEA:'{';
 LLAVEC:'}';
 DOT:'.';
-ID:[a-zA-Z]+;
+ID:[^a-zA-Z]+[a-zA-Z0-9]*;
 INT:[0-9]+;
 PARA:'(';
 PARC:')';
@@ -59,5 +68,11 @@ MAYORQUE:'>';
 MENORQUE:'<';
 IGUAL:'==';
 DIFERENTE:'!=';
+AND: '&&';
+OR: '||';
+INCREMENTO: '++';
+DECREMENTO: '--';
+MENORIGUAL: '<=';
+MAYORIGUAL: '>=';
 
 TEXTO: COMID ~["\r\n]* COMID;

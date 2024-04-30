@@ -24,8 +24,32 @@ export default class DictioVisitor extends antlr4.tree.ParseTreeVisitor {
 	}
 
 
-	// Visit a parse tree produced by DictioParser#siono.
-	visitSiono(ctx) {
+	// Visit a parse tree produced by DictioParser#mientras.
+	visitMientras(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by DictioParser#verdaderofalso.
+	visitVerdaderofalso(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by DictioParser#andor.
+	visitAndor(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by DictioParser#comparaciones.
+	visitComparaciones(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by DictioParser#condiparens.
+	visitCondiparens(ctx) {
 	  return this.visitChildren(ctx);
 	}
 
@@ -38,6 +62,12 @@ export default class DictioVisitor extends antlr4.tree.ParseTreeVisitor {
 
 	// Visit a parse tree produced by DictioParser#deotrosimple.
 	visitDeotrosimple(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by DictioParser#cambio.
+	visitCambio(ctx) {
 	  return this.visitChildren(ctx);
 	}
 

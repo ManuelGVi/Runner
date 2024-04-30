@@ -1,49 +1,44 @@
 .runner-container {
   display: flex;
-  justify-content: space-between;
-  align-items: stretch;
+  flex-direction: column;
   width: 100%;
 }
 
 .input-container {
+  display: flex;
   flex: 1;
   padding: 10px;
-  border-right: 1px solid #ccc;
-  box-sizing: border-box;
-  color:black;
-}
-
-.output-container {
-  flex: 1;
-  padding: 10px;
-  box-sizing: border-box;
 }
 
 .code-input {
+  flex: 1;
   display: flex;
-}
-
-.line-numbers {
-  min-width: 40px; /* Ajusta según sea necesario */
-  padding-right: 10px;
-  text-align: right;
-  border-right: 1px solid #ccc;
-  box-sizing: border-box;
-  color: white;
 }
 
 textarea {
   flex: 1;
   padding: 10px;
-  resize: vertical;
+  height: 500px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-sizing: border-box;
+  resize: none;
+  color: black;
+  overflow-y: auto; /* Aplicar scroll en caso de overflow vertical */
+  margin-right: 10px; /* Espacio entre los textareas */
 }
 
-.compile-button {
+.output-container {
+  padding: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.compile-button, .translate-button {
   padding: 10px 20px;
-  margin-bottom: 10px;
+  margin: 0 5px; /* Espacio entre los botones */
   background-color: #007bff;
   color: white;
   border: none;
@@ -55,12 +50,18 @@ textarea {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  min-height: 100px; /* Ajusta según sea necesario */
-  overflow-y: auto;
+  min-height: 100px; /* Ajustar según sea necesario */
+  overflow-y: auto; /* Aplicar scroll en caso de overflow vertical */
 }
 
-.line-number {
-  padding: 5px;
+.line-numbers {
+  width: 40px; /* Tamaño fijo para los números de línea */
+  padding-right: 10px;
+  text-align: right;
+  border-right: 1px solid #ccc;
+  box-sizing: border-box;
+  color: white;
+  overflow-y: auto; /* Aplicar scroll en caso de overflow vertical */
+  height: 500px; /* Altura fija para los contenedores de los números de línea */
 }
 
-/* Agrega más estilos según sea necesario */

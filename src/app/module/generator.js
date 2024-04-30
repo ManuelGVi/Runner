@@ -4,6 +4,7 @@ import DictioParser from "../../grammar/DictioParser.js";
 import CustomVisitor from "../helper/CustomVisitor.js";
 
 export const analizar = (input) => {
+  console.log("intrada:", input);
   const chars = new antlr4.InputStream(input);
   const lexer = new DictioLexer(chars);
   const tokens = new antlr4.CommonTokenStream(lexer);
@@ -25,5 +26,6 @@ export const analizar = (input) => {
   const tree = parser.main();
   const customVisitor = new CustomVisitor();
   let result = customVisitor.visitMain(tree);
+  console.log("Resultado del análisis:", result);
   return {result, errors: errorListener.syntaxErrors};
 };

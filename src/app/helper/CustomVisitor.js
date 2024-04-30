@@ -31,49 +31,101 @@ export default class CustomVisitor extends DictioVisitor {
             return this.visit(ctx.deotro());
         }
       }
-  
-  
-      // Visit a parse tree produced by DictioParser#siono.
-      visitSiono(ctx) {
-         // Evaluar las dos expresiones.
-         if (ctx.VERDAD()){
+      visitMientras(ctx) {
+        let conditionResult = this.visit(ctx.siono());
+        let visitas = []; // Array para almacenar los resultados de la visita
+    
+        while (conditionResult) {
+            console.log("visita content");
+            const resultadoVisita = this.visit(ctx.content()); // Obtener el resultado de la visita
+            visitas.push(resultadoVisita); // Almacenar el resultado en el array visitas
+             if (ctx.cambio()) {
+            this.visit(ctx.cambio());
+        }
+            conditionResult = this.visit(ctx.siono());
+
+        }
+    
+        return visitas; // Retornar el array con todos los resultados de las visitas
+    }
+    
+  // Visit a parse tree produced by DictioParser#verdaderofalso.
+	visitVerdaderofalso(ctx) {
+        if (ctx.VERDAD()){
             return true;
          }
          if (ctx.FALSO()){
             return false;
          }
-         const left = this.visit(ctx.expr(0));
-         const right = this.visit(ctx.expr(1));
-         let leftValue;
-         let rightValue;
- 
-         if (isNaN(left)){
-             leftValue = this.memoria.get(left);
-         }else{
-             leftValue = left;
-         }
-         if (isNaN(right)){
-             rightValue = this.memoria.get(right);
-         }else{
-             rightValue = right;
-         }
-    // Obtener el operador.
-    const operator = ctx.op.type;
+      }
+  
+  
+      // Visit a parse tree produced by DictioParser#andor.
+      visitAndor(ctx) {
+        const left = this.visit(ctx.siono(0));
+        const right = this.visit(ctx.siono(1));
 
-    // Realizar la comparación basada en el operador.
-    switch (operator) {
-        case DictioParser.MAYORQUE:
-            return left > right;
-        case DictioParser.MENORQUE:
-            return left < right;
-        case DictioParser.IGUAL:
-            return left === right;
-        case DictioParser.DIFERENTE:
-            return left !== right;
-        default:
-            throw new Error("Operador desconocido: " + operator);
+        switch (ctx.op.type) {
+            case DictioParser.AND:
+                return left && right;
+            case DictioParser.OR:
+                return left || right;
+            default:
+                throw new Error("Operador lógico desconocido: " + ctx.op.text);
     }
       }
+  
+  
+      // Visit a parse tree produced by DictioParser#comparaciones.
+      visitComparaciones(ctx) {
+        const left = this.visit(ctx.expr(0));
+        const right = this.visit(ctx.expr(1));
+        let leftValue;
+        let rightValue;
+
+        if (isNaN(left)){
+            leftValue = this.memoria.get(left);
+        }else{
+            leftValue = left;
+        }
+        if (isNaN(right)){
+            rightValue = this.memoria.get(right);
+        }else{
+            rightValue = right;
+        }
+   // Obtener el operador.
+   const operator = ctx.op.type;
+
+
+   // Realizar la comparación basada en el operador.
+   switch (operator) {
+       case DictioParser.MAYORQUE:
+           return left > right;
+       case DictioParser.MENORQUE:
+           return left < right;
+       case DictioParser.IGUAL:
+           return left === right;
+       case DictioParser.DIFERENTE:
+           return left !== right;
+       case DictioParser.MAYORIGUAL:
+           return left >= right;
+       case DictioParser.MENORIGUAL:
+           return left <= right;
+
+       default:
+           throw new Error("Operador desconocido: " + operator);
+   }
+      }
+      // Visit a parse tree produced by DictioParser#condiparens.
+	visitCondiparens(ctx) {
+        if (ctx.siono()) {
+            return this.visit(ctx.siono());
+        } else {
+            throw new Error("Expresión esperada dentro de los paréntesis en línea " + ctx.start.line);
+        }
+      }
+  
+  
   
   // Visit a parse tree produced by DictioParser#deotroif.
 	visitDeotroif(ctx) {
@@ -88,26 +140,50 @@ export default class CustomVisitor extends DictioVisitor {
             return this.visit(ctx.deotro());
         }
       }
+      visitCambio(ctx) {
+        const id = ctx.ID().getText(); // Obtener el identificador de la variable
+        let value = this.memoria.get(id); // Obtener el valor actual de la variable
+    
+        // Verificar si la variable existe en la memoria
+        if (value === undefined) {
+            throw new Error(`La variable '${id}' no ha sido declarada.`);
+        }
+    
+        // Verificar si se trata de un incremento
+        if (ctx.INCREMENTO()) {
+            value++; // Incrementar el valor de la variable
+        } else if (ctx.DECREMENTO()) { // Verificar si se trata de un decremento
+            value--; // Decrementar el valor de la variable
+        }
+    
+        // Actualizar el valor de la variable en la memoria
+        this.memoria.set(id, value);
+    }
+    
   
   
       // Visit a parse tree produced by DictioParser#deotrosimple.
       visitDeotrosimple(ctx) {
         return this.visit(ctx.content());
       }
-  
-      // Visit a parse tree produced by DictioParser#deotro.
 
 	visitImprime(ctx) {
-        const texto = this.visit(ctx.textobteiner());
-        const containsSemicolon = ctx.SC() !== null;
-        let resultado = texto;
+        let resultado = '';
+
+        if (ctx.textobteiner()) {
+            resultado += this.visit(ctx.textobteiner());
+        }
+    
         if (ctx.expr()) {
-            const id = this.visit(ctx.expr()).getText;
-                resultado += this.visit(ctx.expr());
+            const exprValue = this.visit(ctx.expr());
+    
+            // Verificar si la expresión es un identificador y si está en la memoria
+            if (typeof exprValue === 'string' && this.memoria.has(exprValue)) {
+                resultado += this.memoria.get(exprValue);
             } else {
-                // Manejar el caso en que el identificador no está definido
-                resultado=texto;
+                resultado += exprValue;
             }
+        }
         return resultado;
 	}
 
