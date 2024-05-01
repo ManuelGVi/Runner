@@ -15,6 +15,7 @@ export const translateC = (input) => {
     const cVisitor = new CVisitor();
     cVisitor.visit(tree); 
     let runnerCode = output;
+    console.log("output:",output);
     const runner2 =runnerCode;
     runnerCode='';
     return runner2;

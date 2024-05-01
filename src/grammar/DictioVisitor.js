@@ -90,6 +90,12 @@ export default class DictioVisitor extends antlr4.tree.ParseTreeVisitor {
 	}
 
 
+	// Visit a parse tree produced by DictioParser#residuo.
+	visitResiduo(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
 	// Visit a parse tree produced by DictioParser#parens.
 	visitParens(ctx) {
 	  return this.visitChildren(ctx);

@@ -172,6 +172,11 @@ visitElsesimple(ctx) {
         }
         return ctx.NUM().getText();
     }
+    visitResidual(ctx){
+        output += this.visit(ctx.expr(0));
+        output += ' % ';
+        output += this.visit(ctx.expr(1));
+    }
 
     visitIds(ctx) {
         return ctx.IDS().getText();

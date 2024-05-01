@@ -30,6 +30,7 @@ expr:
  expr operation=(ASTE|DIA) expr      #MulDiv
 | expr operation=(SUM|RES) expr   #Addsub
 | RES? INT #int
+|expr PORCENTAJE expr#residuo
 | PARA expr PARC #parens
 | ID  #id
 ;
@@ -70,6 +71,7 @@ IGUAL:'==';
 DIFERENTE:'!=';
 AND: '&&';
 OR: '||';
+PORCENTAJE:'%';
 INCREMENTO: '++';
 DECREMENTO: '--';
 MENORIGUAL: '<=';

@@ -1,0 +1,108 @@
+2024-04-30 18:19:36:399 grammar LogManager.java:25 before: (COMBINED_GRAMMAR Dictio (RULES (RULE main (BLOCK (ALT LETS RUN LLAVEA (? (BLOCK (ALT content))) LLAVEC))) (RULE content (BLOCK (ALT (+ (BLOCK (ALT condif) (ALT mientras) (ALT imprime) (ALT declara) (ALT asigna)))))) (RULE condif (BLOCK (ALT IF PARA siono PARC LLAVEA content LLAVEC (? (BLOCK (ALT deotro)))))) (RULE mientras (BLOCK (ALT WHILE PARA siono PARC LLAVEA content (? (BLOCK (ALT cambio))) LLAVEC))) (RULE siono (BLOCK (ALT siono (+ (BLOCK (ALT (= op (BLOCK (ALT AND) (ALT OR)))))) siono) (ALT expr (= op (BLOCK (ALT MAYORQUE) (ALT MENORQUE) (ALT MAYORIGUAL) (ALT MENORIGUAL) (ALT IGUAL) (ALT DIFERENTE))) expr) (ALT (BLOCK (ALT VERDAD) (ALT FALSO))) (ALT expr PORCENTAJE INT IGUAL INT) (ALT PARA siono PARC))) (RULE deotro (BLOCK (ALT ELSE IF PARA siono PARC LLAVEA content LLAVEC (? (BLOCK (ALT deotro)))) (ALT ELSE LLAVEA content LLAVEC))) (RULE cambio (BLOCK (ALT ID (BLOCK (ALT INCREMENTO) (ALT DECREMENTO)) SC))) (RULE imprime (BLOCK (ALT IMP PARA (BLOCK (ALT textobteiner) (ALT expr)) (* (BLOCK (ALT COMA (BLOCK (ALT textobteiner) (ALT expr))))) PARC SC))) (RULE declara (BLOCK (ALT COMP ID (? (BLOCK (ALT EQU expr))) SC))) (RULE asigna (BLOCK (ALT ID EQU expr SC))) (RULE expr (BLOCK (ALT expr (= operation (BLOCK (ALT ASTE) (ALT DIA))) expr) (ALT expr (= operation (BLOCK (ALT SUM) (ALT RES))) expr) (ALT (? (BLOCK (ALT RES))) INT) (ALT PARA expr PARC) (ALT ID))) (RULE textobteiner (BLOCK (ALT TEXTO))) (RULE WS (BLOCK (LEXER_ALT_ACTION (ALT (+ (BLOCK (ALT [ \t\r\n])))) skip))) (RULE COMENTARIO (BLOCK (LEXER_ALT_ACTION (ALT '//' (* (BLOCK (ALT (~ (SET [\r\n])))))) skip))) (RULE LETS (BLOCK (ALT 'lets'))) (RULE RUN (BLOCK (ALT 'run'))) (RULE COMP (BLOCK (ALT 'comp'))) (RULE IMP (BLOCK (ALT 'imp'))) (RULE IF (BLOCK (ALT 'si'))) (RULE ELSE (BLOCK (ALT 'sino'))) (RULE WHILE (BLOCK (ALT 'mientras'))) (RULE VERDAD (BLOCK (ALT 'true'))) (RULE FALSO (BLOCK (ALT 'false'))) (RULE ASTE (BLOCK (ALT '*'))) (RULE DIA (BLOCK (ALT '/'))) (RULE RES (BLOCK (ALT '-'))) (RULE SUM (BLOCK (ALT '+'))) (RULE EQU (BLOCK (ALT '='))) (RULE LLAVEA (BLOCK (ALT '{'))) (RULE LLAVEC (BLOCK (ALT '}'))) (RULE DOT (BLOCK (ALT '.'))) (RULE ID (BLOCK (ALT (+ (BLOCK (ALT [^a-zA-Z]))) (* (BLOCK (ALT [a-zA-Z0-9])))))) (RULE INT (BLOCK (ALT (+ (BLOCK (ALT [0-9])))))) (RULE PARA (BLOCK (ALT '('))) (RULE PARC (BLOCK (ALT ')'))) (RULE SC (BLOCK (ALT ';'))) (RULE COMA (BLOCK (ALT ','))) (RULE COMID (BLOCK (ALT '"'))) (RULE MAYORQUE (BLOCK (ALT '>'))) (RULE MENORQUE (BLOCK (ALT '<'))) (RULE IGUAL (BLOCK (ALT '=='))) (RULE DIFERENTE (BLOCK (ALT '!='))) (RULE AND (BLOCK (ALT '&&'))) (RULE OR (BLOCK (ALT '||'))) (RULE PORCENTAJE (BLOCK (ALT '%'))) (RULE INCREMENTO (BLOCK (ALT '++'))) (RULE DECREMENTO (BLOCK (ALT '--'))) (RULE MENORIGUAL (BLOCK (ALT '<='))) (RULE MAYORIGUAL (BLOCK (ALT '>='))) (RULE TEXTO (BLOCK (ALT COMID (* (BLOCK (ALT (~ (SET ["\r\n]))))) COMID)))))
+2024-04-30 18:19:36:428 grammar LogManager.java:25 after: (COMBINED_GRAMMAR Dictio (RULES (RULE main (BLOCK (ALT LETS RUN LLAVEA (? (BLOCK (ALT content))) LLAVEC))) (RULE content (BLOCK (ALT (+ (BLOCK (ALT condif) (ALT mientras) (ALT imprime) (ALT declara) (ALT asigna)))))) (RULE condif (BLOCK (ALT IF PARA siono PARC LLAVEA content LLAVEC (? (BLOCK (ALT deotro)))))) (RULE mientras (BLOCK (ALT WHILE PARA siono PARC LLAVEA content (? (BLOCK (ALT cambio))) LLAVEC))) (RULE siono (BLOCK (ALT siono (+ (BLOCK (ALT (= op (SET AND OR))))) siono) (ALT expr (= op (SET MAYORQUE MENORQUE MAYORIGUAL MENORIGUAL IGUAL DIFERENTE)) expr) (ALT (SET VERDAD FALSO)) (ALT expr PORCENTAJE INT IGUAL INT) (ALT PARA siono PARC))) (RULE deotro (BLOCK (ALT ELSE IF PARA siono PARC LLAVEA content LLAVEC (? (BLOCK (ALT deotro)))) (ALT ELSE LLAVEA content LLAVEC))) (RULE cambio (BLOCK (ALT ID (SET INCREMENTO DECREMENTO) SC))) (RULE imprime (BLOCK (ALT IMP PARA (BLOCK (ALT textobteiner) (ALT expr)) (* (BLOCK (ALT COMA (BLOCK (ALT textobteiner) (ALT expr))))) PARC SC))) (RULE declara (BLOCK (ALT COMP ID (? (BLOCK (ALT EQU expr))) SC))) (RULE asigna (BLOCK (ALT ID EQU expr SC))) (RULE expr (BLOCK (ALT expr (= operation (SET ASTE DIA)) expr) (ALT expr (= operation (SET SUM RES)) expr) (ALT (? (BLOCK (ALT RES))) INT) (ALT PARA expr PARC) (ALT ID))) (RULE textobteiner (BLOCK (ALT TEXTO))) (RULE WS (BLOCK (LEXER_ALT_ACTION (ALT (+ (BLOCK (ALT [ \t\r\n])))) skip))) (RULE COMENTARIO (BLOCK (LEXER_ALT_ACTION (ALT '//' (* (BLOCK (ALT (~ (SET [\r\n])))))) skip))) (RULE LETS (BLOCK (ALT 'lets'))) (RULE RUN (BLOCK (ALT 'run'))) (RULE COMP (BLOCK (ALT 'comp'))) (RULE IMP (BLOCK (ALT 'imp'))) (RULE IF (BLOCK (ALT 'si'))) (RULE ELSE (BLOCK (ALT 'sino'))) (RULE WHILE (BLOCK (ALT 'mientras'))) (RULE VERDAD (BLOCK (ALT 'true'))) (RULE FALSO (BLOCK (ALT 'false'))) (RULE ASTE (BLOCK (ALT '*'))) (RULE DIA (BLOCK (ALT '/'))) (RULE RES (BLOCK (ALT '-'))) (RULE SUM (BLOCK (ALT '+'))) (RULE EQU (BLOCK (ALT '='))) (RULE LLAVEA (BLOCK (ALT '{'))) (RULE LLAVEC (BLOCK (ALT '}'))) (RULE DOT (BLOCK (ALT '.'))) (RULE ID (BLOCK (ALT (+ (BLOCK (ALT [^a-zA-Z]))) (* (BLOCK (ALT [a-zA-Z0-9])))))) (RULE INT (BLOCK (ALT (+ (BLOCK (ALT [0-9])))))) (RULE PARA (BLOCK (ALT '('))) (RULE PARC (BLOCK (ALT ')'))) (RULE SC (BLOCK (ALT ';'))) (RULE COMA (BLOCK (ALT ','))) (RULE COMID (BLOCK (ALT '"'))) (RULE MAYORQUE (BLOCK (ALT '>'))) (RULE MENORQUE (BLOCK (ALT '<'))) (RULE IGUAL (BLOCK (ALT '=='))) (RULE DIFERENTE (BLOCK (ALT '!='))) (RULE AND (BLOCK (ALT '&&'))) (RULE OR (BLOCK (ALT '||'))) (RULE PORCENTAJE (BLOCK (ALT '%'))) (RULE INCREMENTO (BLOCK (ALT '++'))) (RULE DECREMENTO (BLOCK (ALT '--'))) (RULE MENORIGUAL (BLOCK (ALT '<='))) (RULE MAYORIGUAL (BLOCK (ALT '>='))) (RULE TEXTO (BLOCK (ALT COMID (* (BLOCK (ALT (~ (SET ["\r\n]))))) COMID)))))
+2024-04-30 18:19:36:459 grammar LogManager.java:25 after extract implicit lexer =(COMBINED_GRAMMAR Dictio (RULES (RULE main (BLOCK (ALT LETS RUN LLAVEA (? (BLOCK (ALT content))) LLAVEC))) (RULE content (BLOCK (ALT (+ (BLOCK (ALT condif) (ALT mientras) (ALT imprime) (ALT declara) (ALT asigna)))))) (RULE condif (BLOCK (ALT IF PARA siono PARC LLAVEA content LLAVEC (? (BLOCK (ALT deotro)))))) (RULE mientras (BLOCK (ALT WHILE PARA siono PARC LLAVEA content (? (BLOCK (ALT cambio))) LLAVEC))) (RULE siono (BLOCK (ALT siono (+ (BLOCK (ALT (= op (SET AND OR))))) siono) (ALT expr (= op (SET MAYORQUE MENORQUE MAYORIGUAL MENORIGUAL IGUAL DIFERENTE)) expr) (ALT (SET VERDAD FALSO)) (ALT expr PORCENTAJE INT IGUAL INT) (ALT PARA siono PARC))) (RULE deotro (BLOCK (ALT ELSE IF PARA siono PARC LLAVEA content LLAVEC (? (BLOCK (ALT deotro)))) (ALT ELSE LLAVEA content LLAVEC))) (RULE cambio (BLOCK (ALT ID (SET INCREMENTO DECREMENTO) SC))) (RULE imprime (BLOCK (ALT IMP PARA (BLOCK (ALT textobteiner) (ALT expr)) (* (BLOCK (ALT COMA (BLOCK (ALT textobteiner) (ALT expr))))) PARC SC))) (RULE declara (BLOCK (ALT COMP ID (? (BLOCK (ALT EQU expr))) SC))) (RULE asigna (BLOCK (ALT ID EQU expr SC))) (RULE expr (BLOCK (ALT expr (= operation (SET ASTE DIA)) expr) (ALT expr (= operation (SET SUM RES)) expr) (ALT (? (BLOCK (ALT RES))) INT) (ALT PARA expr PARC) (ALT ID))) (RULE textobteiner (BLOCK (ALT TEXTO)))))
+2024-04-30 18:19:36:459 grammar LogManager.java:25 lexer =(LEXER_GRAMMAR DictioLexer (RULES (RULE WS (BLOCK (LEXER_ALT_ACTION (ALT (+ (BLOCK (ALT [ \t\r\n])))) skip))) (RULE COMENTARIO (BLOCK (LEXER_ALT_ACTION (ALT '//' (* (BLOCK (ALT (~ (SET [\r\n])))))) skip))) (RULE LETS (BLOCK (ALT 'lets'))) (RULE RUN (BLOCK (ALT 'run'))) (RULE COMP (BLOCK (ALT 'comp'))) (RULE IMP (BLOCK (ALT 'imp'))) (RULE IF (BLOCK (ALT 'si'))) (RULE ELSE (BLOCK (ALT 'sino'))) (RULE WHILE (BLOCK (ALT 'mientras'))) (RULE VERDAD (BLOCK (ALT 'true'))) (RULE FALSO (BLOCK (ALT 'false'))) (RULE ASTE (BLOCK (ALT '*'))) (RULE DIA (BLOCK (ALT '/'))) (RULE RES (BLOCK (ALT '-'))) (RULE SUM (BLOCK (ALT '+'))) (RULE EQU (BLOCK (ALT '='))) (RULE LLAVEA (BLOCK (ALT '{'))) (RULE LLAVEC (BLOCK (ALT '}'))) (RULE DOT (BLOCK (ALT '.'))) (RULE ID (BLOCK (ALT (+ (BLOCK (ALT [^a-zA-Z]))) (* (BLOCK (ALT [a-zA-Z0-9])))))) (RULE INT (BLOCK (ALT (+ (BLOCK (ALT [0-9])))))) (RULE PARA (BLOCK (ALT '('))) (RULE PARC (BLOCK (ALT ')'))) (RULE SC (BLOCK (ALT ';'))) (RULE COMA (BLOCK (ALT ','))) (RULE COMID (BLOCK (ALT '"'))) (RULE MAYORQUE (BLOCK (ALT '>'))) (RULE MENORQUE (BLOCK (ALT '<'))) (RULE IGUAL (BLOCK (ALT '=='))) (RULE DIFERENTE (BLOCK (ALT '!='))) (RULE AND (BLOCK (ALT '&&'))) (RULE OR (BLOCK (ALT '||'))) (RULE PORCENTAJE (BLOCK (ALT '%'))) (RULE INCREMENTO (BLOCK (ALT '++'))) (RULE DECREMENTO (BLOCK (ALT '--'))) (RULE MENORIGUAL (BLOCK (ALT '<='))) (RULE MAYORIGUAL (BLOCK (ALT '>='))) (RULE TEXTO (BLOCK (ALT COMID (* (BLOCK (ALT (~ (SET ["\r\n]))))) COMID)))))
+2024-04-30 18:19:36:740 left-recursion LogManager.java:25 siono
+    :   ( {} expr<tokenIndex=103> op=(MAYORQUE<tokenIndex=108>|MENORQUE<tokenIndex=110>|MAYORIGUAL<tokenIndex=112>|MENORIGUAL<tokenIndex=114>|IGUAL<tokenIndex=116>|DIFERENTE<tokenIndex=118>) expr<tokenIndex=121>  
+        | (VERDAD<tokenIndex=128>|FALSO<tokenIndex=130>) 
+        | expr<tokenIndex=137> PORCENTAJE<tokenIndex=139> INT<tokenIndex=141> IGUAL<tokenIndex=143> INT<tokenIndex=145>  
+        | PARA<tokenIndex=151> siono<tokenIndex=153> PARC<tokenIndex=155>  
+        )
+        (
+          {this.precpred(this._ctx, 5)}?<p=5> op=(AND<tokenIndex=91>|OR<tokenIndex=93>)+ siono<tokenIndex=97,p=6>
+        )*
+    ;
+2024-04-30 18:19:36:749 grammar LogManager.java:25 added: (RULE siono (BLOCK (ALT (BLOCK (ALT {} (expr (ELEMENT_OPTIONS (= tokenIndex 103))) (= op (SET (MAYORQUE (ELEMENT_OPTIONS (= tokenIndex 108))) (MENORQUE (ELEMENT_OPTIONS (= tokenIndex 110))) (MAYORIGUAL (ELEMENT_OPTIONS (= tokenIndex 112))) (MENORIGUAL (ELEMENT_OPTIONS (= tokenIndex 114))) (IGUAL (ELEMENT_OPTIONS (= tokenIndex 116))) (DIFERENTE (ELEMENT_OPTIONS (= tokenIndex 118))))) (expr (ELEMENT_OPTIONS (= tokenIndex 121)))) (ALT (SET (VERDAD (ELEMENT_OPTIONS (= tokenIndex 128))) (FALSO (ELEMENT_OPTIONS (= tokenIndex 130))))) (ALT (expr (ELEMENT_OPTIONS (= tokenIndex 137))) (PORCENTAJE (ELEMENT_OPTIONS (= tokenIndex 139))) (INT (ELEMENT_OPTIONS (= tokenIndex 141))) (IGUAL (ELEMENT_OPTIONS (= tokenIndex 143))) (INT (ELEMENT_OPTIONS (= tokenIndex 145)))) (ALT (PARA (ELEMENT_OPTIONS (= tokenIndex 151))) (siono (ELEMENT_OPTIONS (= tokenIndex 153))) (PARC (ELEMENT_OPTIONS (= tokenIndex 155))))) (* (BLOCK (ALT ({this.precpred(this._ctx, 5)}? (ELEMENT_OPTIONS (= p 5))) (+ (BLOCK (ALT (= op (SET (AND (ELEMENT_OPTIONS (= tokenIndex 91))) (OR (ELEMENT_OPTIONS (= tokenIndex 93)))))))) (siono (ELEMENT_OPTIONS (= tokenIndex 97) (= p 6)))))))))
+2024-04-30 18:19:36:751 left-recursion LogManager.java:25 expr
+    :   ( {} RES<tokenIndex=308>? INT<tokenIndex=311>  
+        | PARA<tokenIndex=318> expr<tokenIndex=320> PARC<tokenIndex=322>  
+        | ID<tokenIndex=329>   
+        )
+        (
+          {this.precpred(this._ctx, 5)}?<p=5> operation=(ASTE<tokenIndex=279>|DIA<tokenIndex=281>) expr<tokenIndex=284,p=6>
+                  | {this.precpred(this._ctx, 4)}?<p=4> operation=(SUM<tokenIndex=296>|RES<tokenIndex=298>) expr<tokenIndex=301,p=5>
+        )*
+    ;
+2024-04-30 18:19:36:755 grammar LogManager.java:25 added: (RULE expr (BLOCK (ALT (BLOCK (ALT {} (? (BLOCK (ALT (RES (ELEMENT_OPTIONS (= tokenIndex 308)))))) (INT (ELEMENT_OPTIONS (= tokenIndex 311)))) (ALT (PARA (ELEMENT_OPTIONS (= tokenIndex 318))) (expr (ELEMENT_OPTIONS (= tokenIndex 320))) (PARC (ELEMENT_OPTIONS (= tokenIndex 322)))) (ALT (ID (ELEMENT_OPTIONS (= tokenIndex 329))))) (* (BLOCK (ALT ({this.precpred(this._ctx, 5)}? (ELEMENT_OPTIONS (= p 5))) (= operation (SET (ASTE (ELEMENT_OPTIONS (= tokenIndex 279))) (DIA (ELEMENT_OPTIONS (= tokenIndex 281))))) (expr (ELEMENT_OPTIONS (= tokenIndex 284) (= p 6)))) (ALT ({this.precpred(this._ctx, 4)}? (ELEMENT_OPTIONS (= p 4))) (= operation (SET (SUM (ELEMENT_OPTIONS (= tokenIndex 296))) (RES (ELEMENT_OPTIONS (= tokenIndex 298))))) (expr (ELEMENT_OPTIONS (= tokenIndex 301) (= p 5)))))))))
+2024-04-30 18:19:36:757 semantics LogManager.java:25 tokens={EOF=-1, WS=1, COMENTARIO=2, LETS=3, RUN=4, COMP=5, IMP=6, IF=7, ELSE=8, WHILE=9, VERDAD=10, FALSO=11, ASTE=12, DIA=13, RES=14, SUM=15, EQU=16, LLAVEA=17, LLAVEC=18, DOT=19, ID=20, INT=21, PARA=22, PARC=23, SC=24, COMA=25, COMID=26, MAYORQUE=27, MENORQUE=28, IGUAL=29, DIFERENTE=30, AND=31, OR=32, PORCENTAJE=33, INCREMENTO=34, DECREMENTO=35, MENORIGUAL=36, MAYORIGUAL=37, TEXTO=38}
+2024-04-30 18:19:36:757 semantics LogManager.java:25 strings={'lets'=3, 'run'=4, 'comp'=5, 'imp'=6, 'si'=7, 'sino'=8, 'mientras'=9, 'true'=10, 'false'=11, '*'=12, '/'=13, '-'=14, '+'=15, '='=16, '{'=17, '}'=18, '.'=19, '('=22, ')'=23, ';'=24, ','=25, '"'=26, '>'=27, '<'=28, '=='=29, '!='=30, '&&'=31, '||'=32, '%'=33, '++'=34, '--'=35, '<='=36, '>='=37}
+2024-04-30 18:19:36:773 LL1 LogManager.java:25 
+DECISION 0 in rule main
+2024-04-30 18:19:36:774 LL1 LogManager.java:25 look=[{5..7, 9, 20}, 18]
+2024-04-30 18:19:36:774 LL1 LogManager.java:25 LL(1)? true
+2024-04-30 18:19:36:774 LL1 LogManager.java:25 
+DECISION 1 in rule content
+2024-04-30 18:19:36:774 LL1 LogManager.java:25 look=[7, 9, 6, 5, 20]
+2024-04-30 18:19:36:774 LL1 LogManager.java:25 LL(1)? true
+2024-04-30 18:19:36:774 LL1 LogManager.java:25 
+DECISION 2 in rule content
+2024-04-30 18:19:36:774 LL1 LogManager.java:25 look=[{5..7, 9, 20}, {18, 20}]
+2024-04-30 18:19:36:774 LL1 LogManager.java:25 LL(1)? false
+2024-04-30 18:19:36:775 LL1 LogManager.java:25 
+DECISION 3 in rule condif
+2024-04-30 18:19:36:775 LL1 LogManager.java:25 look=[8, {5..7, 9, 18, 20}]
+2024-04-30 18:19:36:775 LL1 LogManager.java:25 LL(1)? true
+2024-04-30 18:19:36:775 LL1 LogManager.java:25 
+DECISION 4 in rule mientras
+2024-04-30 18:19:36:775 LL1 LogManager.java:25 look=[20, 18]
+2024-04-30 18:19:36:775 LL1 LogManager.java:25 LL(1)? true
+2024-04-30 18:19:36:775 LL1 LogManager.java:25 
+DECISION 5 in rule siono
+2024-04-30 18:19:36:775 LL1 LogManager.java:25 look=[{14, 20..22}, {10..11}, {14, 20..22}, 22]
+2024-04-30 18:19:36:775 LL1 LogManager.java:25 LL(1)? false
+2024-04-30 18:19:36:775 LL1 LogManager.java:25 
+DECISION 6 in rule siono
+2024-04-30 18:19:36:775 LL1 LogManager.java:25 look=[{31..32}, {10..11, 14, 20..22}]
+2024-04-30 18:19:36:775 LL1 LogManager.java:25 LL(1)? true
+2024-04-30 18:19:36:775 LL1 LogManager.java:25 
+DECISION 7 in rule siono
+2024-04-30 18:19:36:775 LL1 LogManager.java:25 look=[null, null]
+2024-04-30 18:19:36:775 LL1 LogManager.java:25 LL(1)? false
+2024-04-30 18:19:36:776 LL1 LogManager.java:25 
+DECISION 8 in rule deotro
+2024-04-30 18:19:36:776 LL1 LogManager.java:25 look=[8, {5..7, 9, 18, 20}]
+2024-04-30 18:19:36:776 LL1 LogManager.java:25 LL(1)? true
+2024-04-30 18:19:36:776 LL1 LogManager.java:25 
+DECISION 9 in rule deotro
+2024-04-30 18:19:36:776 LL1 LogManager.java:25 look=[8, 8]
+2024-04-30 18:19:36:776 LL1 LogManager.java:25 LL(1)? false
+2024-04-30 18:19:36:776 LL1 LogManager.java:25 
+DECISION 10 in rule imprime
+2024-04-30 18:19:36:776 LL1 LogManager.java:25 look=[38, {14, 20..22}]
+2024-04-30 18:19:36:776 LL1 LogManager.java:25 LL(1)? true
+2024-04-30 18:19:36:776 LL1 LogManager.java:25 
+DECISION 11 in rule imprime
+2024-04-30 18:19:36:776 LL1 LogManager.java:25 look=[38, {14, 20..22}]
+2024-04-30 18:19:36:776 LL1 LogManager.java:25 LL(1)? true
+2024-04-30 18:19:36:776 LL1 LogManager.java:25 
+DECISION 12 in rule imprime
+2024-04-30 18:19:36:776 LL1 LogManager.java:25 look=[25, 23]
+2024-04-30 18:19:36:776 LL1 LogManager.java:25 LL(1)? true
+2024-04-30 18:19:36:776 LL1 LogManager.java:25 
+DECISION 13 in rule declara
+2024-04-30 18:19:36:776 LL1 LogManager.java:25 look=[16, 24]
+2024-04-30 18:19:36:776 LL1 LogManager.java:25 LL(1)? true
+2024-04-30 18:19:36:776 LL1 LogManager.java:25 
+DECISION 14 in rule expr
+2024-04-30 18:19:36:776 LL1 LogManager.java:25 look=[14, 21]
+2024-04-30 18:19:36:777 LL1 LogManager.java:25 LL(1)? true
+2024-04-30 18:19:36:777 LL1 LogManager.java:25 
+DECISION 15 in rule expr
+2024-04-30 18:19:36:777 LL1 LogManager.java:25 look=[{14, 21}, 22, 20]
+2024-04-30 18:19:36:777 LL1 LogManager.java:25 LL(1)? true
+2024-04-30 18:19:36:777 LL1 LogManager.java:25 
+DECISION 16 in rule expr
+2024-04-30 18:19:36:777 LL1 LogManager.java:25 look=[null, null]
+2024-04-30 18:19:36:777 LL1 LogManager.java:25 LL(1)? false
+2024-04-30 18:19:36:777 LL1 LogManager.java:25 
+DECISION 17 in rule expr
+2024-04-30 18:19:36:777 LL1 LogManager.java:25 look=[null, null]
+2024-04-30 18:19:36:777 LL1 LogManager.java:25 LL(1)? false
+2024-04-30 18:19:36:809 action-translator LogManager.java:25 translate 
+2024-04-30 18:19:36:812 action-translator LogManager.java:25 translate this.precpred(this._ctx, 5)
+2024-04-30 18:19:36:815 action-translator LogManager.java:25 translate this.precpred(this._ctx, 5)
+2024-04-30 18:19:36:821 action-translator LogManager.java:25 translate 
+2024-04-30 18:19:36:821 action-translator LogManager.java:25 translate this.precpred(this._ctx, 5)
+2024-04-30 18:19:36:822 action-translator LogManager.java:25 translate this.precpred(this._ctx, 4)
+2024-04-30 18:19:36:822 action-translator LogManager.java:25 translate this.precpred(this._ctx, 5)
+2024-04-30 18:19:36:822 action-translator LogManager.java:25 translate this.precpred(this._ctx, 4)

@@ -1,0 +1,110 @@
+2024-04-30 18:30:40:948 grammar LogManager.java:25 before: (COMBINED_GRAMMAR CDictio (RULES (RULE main (BLOCK (ALT (BLOCK (ALT VOID) (ALT INT)) MAIN PARENO PARENC LLAVEO (? (BLOCK (ALT contenido))) LLAVECL))) (RULE contenido (BLOCK (ALT (+ (BLOCK (ALT conditionalif) (ALT ciclowhile) (ALT print) (ALT declaration) (ALT asignation)))))) (RULE conditionalif (BLOCK (ALT SI PARENO condition PARENC LLAVEO contenido LLAVECL (? (BLOCK (ALT elseif) (ALT elsesimple)))))) (RULE ciclowhile (BLOCK (ALT WHILE PARENO condition PARENC LLAVEO contenido change LLAVECL))) (RULE elseif (BLOCK (ALT SINO SI PARENO condition PARENC LLAVEO contenido LLAVECL (? (BLOCK (ALT elseif) (ALT elsesimple)))))) (RULE elsesimple (BLOCK (ALT SINO LLAVEO contenido LLAVECL))) (RULE condition (BLOCK (ALT condition (+ (BLOCK (ALT (= op (BLOCK (ALT Y) (ALT O)))))) condition) (ALT expr (= op (BLOCK (ALT GREATERTHAN) (ALT LOWER) (ALT GREATEREQUAL) (ALT LOWEREQUAL) (ALT COMPARISON) (ALT NOTEQUAL))) expr) (ALT (BLOCK (ALT TRUE) (ALT FALSE))) (ALT PARENO condition PARENC))) (RULE print (BLOCK (ALT PRINTF PARENO (BLOCK (ALT textobteiner) (ALT expr)) PARENC SEMICOLON) (ALT PRINTF PARENO (BLOCK (ALT textobteiner) (ALT expr)) (* (BLOCK (ALT COMMA (BLOCK (ALT expr) (ALT textobteiner))))) PARENC SEMICOLON))) (RULE declaration (BLOCK (ALT INT IDS (? (BLOCK (ALT EQUAL expr))) SEMICOLON))) (RULE asignation (BLOCK (ALT IDS EQUAL expr SEMICOLON))) (RULE change (BLOCK (ALT IDS (BLOCK (ALT INCREMENT) (ALT DECREMENT)) SEMICOLON))) (RULE expr (BLOCK (ALT expr (= operation (BLOCK (ALT MUL) (ALT DIV))) expr) (ALT expr (= operation (BLOCK (ALT ADD) (ALT SUB))) expr) (ALT (? (BLOCK (ALT SUB))) NUM) (ALT expr PER expr) (ALT PARENO expr PARENC) (ALT IDS))) (RULE textobteiner (BLOCK (ALT TEXT))) (RULE WS (BLOCK (LEXER_ALT_ACTION (ALT (+ (BLOCK (ALT [ \t\r\n])))) skip))) (RULE COMENTARIO (BLOCK (LEXER_ALT_ACTION (ALT '//' (* (BLOCK (ALT (~ (SET [\r\n])))))) skip))) (RULE SKIPRETUNR (BLOCK (LEXER_ALT_ACTION (ALT RETURN) skip))) (RULE VOID (BLOCK (ALT 'void'))) (RULE MAIN (BLOCK (ALT 'main'))) (RULE INT (BLOCK (ALT 'int'))) (RULE PRINTF (BLOCK (ALT 'printf'))) (RULE SI (BLOCK (ALT 'if'))) (RULE SINO (BLOCK (ALT 'else'))) (RULE TRUE (BLOCK (ALT 'true'))) (RULE FALSE (BLOCK (ALT 'false'))) (RULE WHILE (BLOCK (ALT 'while'))) (RULE MUL (BLOCK (ALT '*'))) (RULE DIV (BLOCK (ALT '/'))) (RULE SUB (BLOCK (ALT '-'))) (RULE ADD (BLOCK (ALT '+'))) (RULE EQUAL (BLOCK (ALT '='))) (RULE LLAVEO (BLOCK (ALT '{'))) (RULE LLAVECL (BLOCK (ALT '}'))) (RULE PUNTO (BLOCK (ALT '.'))) (RULE IDS (BLOCK (ALT (+ (BLOCK (ALT [^a-zA-Z]))) (* (BLOCK (ALT [a-zA-Z0-9])))))) (RULE NUM (BLOCK (ALT (+ (BLOCK (ALT [0-9])))))) (RULE PARENO (BLOCK (ALT '('))) (RULE PARENC (BLOCK (ALT ')'))) (RULE SEMICOLON (BLOCK (ALT ';'))) (RULE COMMA (BLOCK (ALT ','))) (RULE COMILLAS (BLOCK (ALT '"'))) (RULE GREATERTHAN (BLOCK (ALT '>'))) (RULE GREATEREQUAL (BLOCK (ALT '>='))) (RULE LOWEREQUAL (BLOCK (ALT '<='))) (RULE LOWER (BLOCK (ALT '<'))) (RULE COMPARISON (BLOCK (ALT '=='))) (RULE NOTEQUAL (BLOCK (ALT '!='))) (RULE Y (BLOCK (ALT '&&'))) (RULE O (BLOCK (ALT '||'))) (RULE INCREMENT (BLOCK (ALT '++'))) (RULE DECREMENT (BLOCK (ALT '--'))) (RULE PER (BLOCK (ALT '%'))) (RULE RETURN (BLOCK (ALT 'return'))) (RULE TEXT (BLOCK (ALT COMILLAS (* (BLOCK (ALT (~ (SET ["\r\n]))))) COMILLAS)))))
+2024-04-30 18:30:40:976 grammar LogManager.java:25 after: (COMBINED_GRAMMAR CDictio (RULES (RULE main (BLOCK (ALT (SET VOID INT) MAIN PARENO PARENC LLAVEO (? (BLOCK (ALT contenido))) LLAVECL))) (RULE contenido (BLOCK (ALT (+ (BLOCK (ALT conditionalif) (ALT ciclowhile) (ALT print) (ALT declaration) (ALT asignation)))))) (RULE conditionalif (BLOCK (ALT SI PARENO condition PARENC LLAVEO contenido LLAVECL (? (BLOCK (ALT elseif) (ALT elsesimple)))))) (RULE ciclowhile (BLOCK (ALT WHILE PARENO condition PARENC LLAVEO contenido change LLAVECL))) (RULE elseif (BLOCK (ALT SINO SI PARENO condition PARENC LLAVEO contenido LLAVECL (? (BLOCK (ALT elseif) (ALT elsesimple)))))) (RULE elsesimple (BLOCK (ALT SINO LLAVEO contenido LLAVECL))) (RULE condition (BLOCK (ALT condition (+ (BLOCK (ALT (= op (SET Y O))))) condition) (ALT expr (= op (SET GREATERTHAN LOWER GREATEREQUAL LOWEREQUAL COMPARISON NOTEQUAL)) expr) (ALT (SET TRUE FALSE)) (ALT PARENO condition PARENC))) (RULE print (BLOCK (ALT PRINTF PARENO (BLOCK (ALT textobteiner) (ALT expr)) PARENC SEMICOLON) (ALT PRINTF PARENO (BLOCK (ALT textobteiner) (ALT expr)) (* (BLOCK (ALT COMMA (BLOCK (ALT expr) (ALT textobteiner))))) PARENC SEMICOLON))) (RULE declaration (BLOCK (ALT INT IDS (? (BLOCK (ALT EQUAL expr))) SEMICOLON))) (RULE asignation (BLOCK (ALT IDS EQUAL expr SEMICOLON))) (RULE change (BLOCK (ALT IDS (SET INCREMENT DECREMENT) SEMICOLON))) (RULE expr (BLOCK (ALT expr (= operation (SET MUL DIV)) expr) (ALT expr (= operation (SET ADD SUB)) expr) (ALT (? (BLOCK (ALT SUB))) NUM) (ALT expr PER expr) (ALT PARENO expr PARENC) (ALT IDS))) (RULE textobteiner (BLOCK (ALT TEXT))) (RULE WS (BLOCK (LEXER_ALT_ACTION (ALT (+ (BLOCK (ALT [ \t\r\n])))) skip))) (RULE COMENTARIO (BLOCK (LEXER_ALT_ACTION (ALT '//' (* (BLOCK (ALT (~ (SET [\r\n])))))) skip))) (RULE SKIPRETUNR (BLOCK (LEXER_ALT_ACTION (ALT RETURN) skip))) (RULE VOID (BLOCK (ALT 'void'))) (RULE MAIN (BLOCK (ALT 'main'))) (RULE INT (BLOCK (ALT 'int'))) (RULE PRINTF (BLOCK (ALT 'printf'))) (RULE SI (BLOCK (ALT 'if'))) (RULE SINO (BLOCK (ALT 'else'))) (RULE TRUE (BLOCK (ALT 'true'))) (RULE FALSE (BLOCK (ALT 'false'))) (RULE WHILE (BLOCK (ALT 'while'))) (RULE MUL (BLOCK (ALT '*'))) (RULE DIV (BLOCK (ALT '/'))) (RULE SUB (BLOCK (ALT '-'))) (RULE ADD (BLOCK (ALT '+'))) (RULE EQUAL (BLOCK (ALT '='))) (RULE LLAVEO (BLOCK (ALT '{'))) (RULE LLAVECL (BLOCK (ALT '}'))) (RULE PUNTO (BLOCK (ALT '.'))) (RULE IDS (BLOCK (ALT (+ (BLOCK (ALT [^a-zA-Z]))) (* (BLOCK (ALT [a-zA-Z0-9])))))) (RULE NUM (BLOCK (ALT (+ (BLOCK (ALT [0-9])))))) (RULE PARENO (BLOCK (ALT '('))) (RULE PARENC (BLOCK (ALT ')'))) (RULE SEMICOLON (BLOCK (ALT ';'))) (RULE COMMA (BLOCK (ALT ','))) (RULE COMILLAS (BLOCK (ALT '"'))) (RULE GREATERTHAN (BLOCK (ALT '>'))) (RULE GREATEREQUAL (BLOCK (ALT '>='))) (RULE LOWEREQUAL (BLOCK (ALT '<='))) (RULE LOWER (BLOCK (ALT '<'))) (RULE COMPARISON (BLOCK (ALT '=='))) (RULE NOTEQUAL (BLOCK (ALT '!='))) (RULE Y (BLOCK (ALT '&&'))) (RULE O (BLOCK (ALT '||'))) (RULE INCREMENT (BLOCK (ALT '++'))) (RULE DECREMENT (BLOCK (ALT '--'))) (RULE PER (BLOCK (ALT '%'))) (RULE RETURN (BLOCK (ALT 'return'))) (RULE TEXT (BLOCK (ALT COMILLAS (* (BLOCK (ALT (~ (SET ["\r\n]))))) COMILLAS)))))
+2024-04-30 18:30:41:008 grammar LogManager.java:25 after extract implicit lexer =(COMBINED_GRAMMAR CDictio (RULES (RULE main (BLOCK (ALT (SET VOID INT) MAIN PARENO PARENC LLAVEO (? (BLOCK (ALT contenido))) LLAVECL))) (RULE contenido (BLOCK (ALT (+ (BLOCK (ALT conditionalif) (ALT ciclowhile) (ALT print) (ALT declaration) (ALT asignation)))))) (RULE conditionalif (BLOCK (ALT SI PARENO condition PARENC LLAVEO contenido LLAVECL (? (BLOCK (ALT elseif) (ALT elsesimple)))))) (RULE ciclowhile (BLOCK (ALT WHILE PARENO condition PARENC LLAVEO contenido change LLAVECL))) (RULE elseif (BLOCK (ALT SINO SI PARENO condition PARENC LLAVEO contenido LLAVECL (? (BLOCK (ALT elseif) (ALT elsesimple)))))) (RULE elsesimple (BLOCK (ALT SINO LLAVEO contenido LLAVECL))) (RULE condition (BLOCK (ALT condition (+ (BLOCK (ALT (= op (SET Y O))))) condition) (ALT expr (= op (SET GREATERTHAN LOWER GREATEREQUAL LOWEREQUAL COMPARISON NOTEQUAL)) expr) (ALT (SET TRUE FALSE)) (ALT PARENO condition PARENC))) (RULE print (BLOCK (ALT PRINTF PARENO (BLOCK (ALT textobteiner) (ALT expr)) PARENC SEMICOLON) (ALT PRINTF PARENO (BLOCK (ALT textobteiner) (ALT expr)) (* (BLOCK (ALT COMMA (BLOCK (ALT expr) (ALT textobteiner))))) PARENC SEMICOLON))) (RULE declaration (BLOCK (ALT INT IDS (? (BLOCK (ALT EQUAL expr))) SEMICOLON))) (RULE asignation (BLOCK (ALT IDS EQUAL expr SEMICOLON))) (RULE change (BLOCK (ALT IDS (SET INCREMENT DECREMENT) SEMICOLON))) (RULE expr (BLOCK (ALT expr (= operation (SET MUL DIV)) expr) (ALT expr (= operation (SET ADD SUB)) expr) (ALT (? (BLOCK (ALT SUB))) NUM) (ALT expr PER expr) (ALT PARENO expr PARENC) (ALT IDS))) (RULE textobteiner (BLOCK (ALT TEXT)))))
+2024-04-30 18:30:41:008 grammar LogManager.java:25 lexer =(LEXER_GRAMMAR CDictioLexer (RULES (RULE WS (BLOCK (LEXER_ALT_ACTION (ALT (+ (BLOCK (ALT [ \t\r\n])))) skip))) (RULE COMENTARIO (BLOCK (LEXER_ALT_ACTION (ALT '//' (* (BLOCK (ALT (~ (SET [\r\n])))))) skip))) (RULE SKIPRETUNR (BLOCK (LEXER_ALT_ACTION (ALT RETURN) skip))) (RULE VOID (BLOCK (ALT 'void'))) (RULE MAIN (BLOCK (ALT 'main'))) (RULE INT (BLOCK (ALT 'int'))) (RULE PRINTF (BLOCK (ALT 'printf'))) (RULE SI (BLOCK (ALT 'if'))) (RULE SINO (BLOCK (ALT 'else'))) (RULE TRUE (BLOCK (ALT 'true'))) (RULE FALSE (BLOCK (ALT 'false'))) (RULE WHILE (BLOCK (ALT 'while'))) (RULE MUL (BLOCK (ALT '*'))) (RULE DIV (BLOCK (ALT '/'))) (RULE SUB (BLOCK (ALT '-'))) (RULE ADD (BLOCK (ALT '+'))) (RULE EQUAL (BLOCK (ALT '='))) (RULE LLAVEO (BLOCK (ALT '{'))) (RULE LLAVECL (BLOCK (ALT '}'))) (RULE PUNTO (BLOCK (ALT '.'))) (RULE IDS (BLOCK (ALT (+ (BLOCK (ALT [^a-zA-Z]))) (* (BLOCK (ALT [a-zA-Z0-9])))))) (RULE NUM (BLOCK (ALT (+ (BLOCK (ALT [0-9])))))) (RULE PARENO (BLOCK (ALT '('))) (RULE PARENC (BLOCK (ALT ')'))) (RULE SEMICOLON (BLOCK (ALT ';'))) (RULE COMMA (BLOCK (ALT ','))) (RULE COMILLAS (BLOCK (ALT '"'))) (RULE GREATERTHAN (BLOCK (ALT '>'))) (RULE GREATEREQUAL (BLOCK (ALT '>='))) (RULE LOWEREQUAL (BLOCK (ALT '<='))) (RULE LOWER (BLOCK (ALT '<'))) (RULE COMPARISON (BLOCK (ALT '=='))) (RULE NOTEQUAL (BLOCK (ALT '!='))) (RULE Y (BLOCK (ALT '&&'))) (RULE O (BLOCK (ALT '||'))) (RULE INCREMENT (BLOCK (ALT '++'))) (RULE DECREMENT (BLOCK (ALT '--'))) (RULE PER (BLOCK (ALT '%'))) (RULE RETURN (BLOCK (ALT 'return'))) (RULE TEXT (BLOCK (ALT COMILLAS (* (BLOCK (ALT (~ (SET ["\r\n]))))) COMILLAS)))))
+2024-04-30 18:30:41:294 left-recursion LogManager.java:25 condition
+    :   ( {} expr<tokenIndex=151> op=(GREATERTHAN<tokenIndex=156>|LOWER<tokenIndex=158>|GREATEREQUAL<tokenIndex=160>|LOWEREQUAL<tokenIndex=162>|COMPARISON<tokenIndex=164>|NOTEQUAL<tokenIndex=166>) expr<tokenIndex=169>  
+        | (TRUE<tokenIndex=176>|FALSE<tokenIndex=178>) 
+        | PARENO<tokenIndex=184> condition<tokenIndex=186> PARENC<tokenIndex=188>  
+        )
+        (
+          {this.precpred(this._ctx, 4)}?<p=4> op=(Y<tokenIndex=139>|O<tokenIndex=141>)+ condition<tokenIndex=145,p=5>
+        )*
+    ;
+2024-04-30 18:30:41:303 grammar LogManager.java:25 added: (RULE condition (BLOCK (ALT (BLOCK (ALT {} (expr (ELEMENT_OPTIONS (= tokenIndex 151))) (= op (SET (GREATERTHAN (ELEMENT_OPTIONS (= tokenIndex 156))) (LOWER (ELEMENT_OPTIONS (= tokenIndex 158))) (GREATEREQUAL (ELEMENT_OPTIONS (= tokenIndex 160))) (LOWEREQUAL (ELEMENT_OPTIONS (= tokenIndex 162))) (COMPARISON (ELEMENT_OPTIONS (= tokenIndex 164))) (NOTEQUAL (ELEMENT_OPTIONS (= tokenIndex 166))))) (expr (ELEMENT_OPTIONS (= tokenIndex 169)))) (ALT (SET (TRUE (ELEMENT_OPTIONS (= tokenIndex 176))) (FALSE (ELEMENT_OPTIONS (= tokenIndex 178))))) (ALT (PARENO (ELEMENT_OPTIONS (= tokenIndex 184))) (condition (ELEMENT_OPTIONS (= tokenIndex 186))) (PARENC (ELEMENT_OPTIONS (= tokenIndex 188))))) (* (BLOCK (ALT ({this.precpred(this._ctx, 4)}? (ELEMENT_OPTIONS (= p 4))) (+ (BLOCK (ALT (= op (SET (Y (ELEMENT_OPTIONS (= tokenIndex 139))) (O (ELEMENT_OPTIONS (= tokenIndex 141)))))))) (condition (ELEMENT_OPTIONS (= tokenIndex 145) (= p 5)))))))))
+2024-04-30 18:30:41:305 left-recursion LogManager.java:25 expr
+    :   ( {} SUB<tokenIndex=319>? NUM<tokenIndex=322>  
+        | PARENO<tokenIndex=340> expr<tokenIndex=342> PARENC<tokenIndex=344>  
+        | IDS<tokenIndex=351>   
+        )
+        (
+          {this.precpred(this._ctx, 6)}?<p=6> operation=(MUL<tokenIndex=290>|DIV<tokenIndex=292>) expr<tokenIndex=295,p=7>
+                  | {this.precpred(this._ctx, 5)}?<p=5> operation=(ADD<tokenIndex=307>|SUB<tokenIndex=309>) expr<tokenIndex=312,p=6>
+                  | {this.precpred(this._ctx, 3)}?<p=3> PER<tokenIndex=331> expr<tokenIndex=333,p=4>
+        )*
+    ;
+2024-04-30 18:30:41:317 grammar LogManager.java:25 added: (RULE expr (BLOCK (ALT (BLOCK (ALT {} (? (BLOCK (ALT (SUB (ELEMENT_OPTIONS (= tokenIndex 319)))))) (NUM (ELEMENT_OPTIONS (= tokenIndex 322)))) (ALT (PARENO (ELEMENT_OPTIONS (= tokenIndex 340))) (expr (ELEMENT_OPTIONS (= tokenIndex 342))) (PARENC (ELEMENT_OPTIONS (= tokenIndex 344)))) (ALT (IDS (ELEMENT_OPTIONS (= tokenIndex 351))))) (* (BLOCK (ALT ({this.precpred(this._ctx, 6)}? (ELEMENT_OPTIONS (= p 6))) (= operation (SET (MUL (ELEMENT_OPTIONS (= tokenIndex 290))) (DIV (ELEMENT_OPTIONS (= tokenIndex 292))))) (expr (ELEMENT_OPTIONS (= tokenIndex 295) (= p 7)))) (ALT ({this.precpred(this._ctx, 5)}? (ELEMENT_OPTIONS (= p 5))) (= operation (SET (ADD (ELEMENT_OPTIONS (= tokenIndex 307))) (SUB (ELEMENT_OPTIONS (= tokenIndex 309))))) (expr (ELEMENT_OPTIONS (= tokenIndex 312) (= p 6)))) (ALT ({this.precpred(this._ctx, 3)}? (ELEMENT_OPTIONS (= p 3))) (PER (ELEMENT_OPTIONS (= tokenIndex 331))) (expr (ELEMENT_OPTIONS (= tokenIndex 333) (= p 4)))))))))
+2024-04-30 18:30:41:322 semantics LogManager.java:25 tokens={EOF=-1, WS=1, COMENTARIO=2, SKIPRETUNR=3, VOID=4, MAIN=5, INT=6, PRINTF=7, SI=8, SINO=9, TRUE=10, FALSE=11, WHILE=12, MUL=13, DIV=14, SUB=15, ADD=16, EQUAL=17, LLAVEO=18, LLAVECL=19, PUNTO=20, IDS=21, NUM=22, PARENO=23, PARENC=24, SEMICOLON=25, COMMA=26, COMILLAS=27, GREATERTHAN=28, GREATEREQUAL=29, LOWEREQUAL=30, LOWER=31, COMPARISON=32, NOTEQUAL=33, Y=34, O=35, INCREMENT=36, DECREMENT=37, PER=38, RETURN=39, TEXT=40}
+2024-04-30 18:30:41:322 semantics LogManager.java:25 strings={'void'=4, 'main'=5, 'int'=6, 'printf'=7, 'if'=8, 'else'=9, 'true'=10, 'false'=11, 'while'=12, '*'=13, '/'=14, '-'=15, '+'=16, '='=17, '{'=18, '}'=19, '.'=20, '('=23, ')'=24, ';'=25, ','=26, '"'=27, '>'=28, '>='=29, '<='=30, '<'=31, '=='=32, '!='=33, '&&'=34, '||'=35, '++'=36, '--'=37, '%'=38, 'return'=39}
+2024-04-30 18:30:41:330 LL1 LogManager.java:25 
+DECISION 0 in rule main
+2024-04-30 18:30:41:331 LL1 LogManager.java:25 look=[{6..8, 12, 21}, 19]
+2024-04-30 18:30:41:331 LL1 LogManager.java:25 LL(1)? true
+2024-04-30 18:30:41:331 LL1 LogManager.java:25 
+DECISION 1 in rule contenido
+2024-04-30 18:30:41:332 LL1 LogManager.java:25 look=[8, 12, 7, 6, 21]
+2024-04-30 18:30:41:332 LL1 LogManager.java:25 LL(1)? true
+2024-04-30 18:30:41:332 LL1 LogManager.java:25 
+DECISION 2 in rule contenido
+2024-04-30 18:30:41:332 LL1 LogManager.java:25 look=[{6..8, 12, 21}, {19, 21}]
+2024-04-30 18:30:41:332 LL1 LogManager.java:25 LL(1)? false
+2024-04-30 18:30:41:332 LL1 LogManager.java:25 
+DECISION 3 in rule conditionalif
+2024-04-30 18:30:41:332 LL1 LogManager.java:25 look=[9, 9, {6..8, 12, 19, 21}]
+2024-04-30 18:30:41:332 LL1 LogManager.java:25 LL(1)? false
+2024-04-30 18:30:41:332 LL1 LogManager.java:25 
+DECISION 4 in rule elseif
+2024-04-30 18:30:41:333 LL1 LogManager.java:25 look=[9, 9, {6..8, 12, 19, 21}]
+2024-04-30 18:30:41:333 LL1 LogManager.java:25 LL(1)? false
+2024-04-30 18:30:41:334 LL1 LogManager.java:25 
+DECISION 5 in rule condition
+2024-04-30 18:30:41:334 LL1 LogManager.java:25 look=[{15, 21..23}, {10..11}, 23]
+2024-04-30 18:30:41:334 LL1 LogManager.java:25 LL(1)? false
+2024-04-30 18:30:41:334 LL1 LogManager.java:25 
+DECISION 6 in rule condition
+2024-04-30 18:30:41:334 LL1 LogManager.java:25 look=[{34..35}, {10..11, 15, 21..23}]
+2024-04-30 18:30:41:334 LL1 LogManager.java:25 LL(1)? true
+2024-04-30 18:30:41:334 LL1 LogManager.java:25 
+DECISION 7 in rule condition
+2024-04-30 18:30:41:335 LL1 LogManager.java:25 look=[null, null]
+2024-04-30 18:30:41:335 LL1 LogManager.java:25 LL(1)? false
+2024-04-30 18:30:41:335 LL1 LogManager.java:25 
+DECISION 8 in rule print
+2024-04-30 18:30:41:335 LL1 LogManager.java:25 look=[40, {15, 21..23}]
+2024-04-30 18:30:41:335 LL1 LogManager.java:25 LL(1)? true
+2024-04-30 18:30:41:335 LL1 LogManager.java:25 
+DECISION 9 in rule print
+2024-04-30 18:30:41:335 LL1 LogManager.java:25 look=[40, {15, 21..23}]
+2024-04-30 18:30:41:335 LL1 LogManager.java:25 LL(1)? true
+2024-04-30 18:30:41:335 LL1 LogManager.java:25 
+DECISION 10 in rule print
+2024-04-30 18:30:41:335 LL1 LogManager.java:25 look=[{15, 21..23}, 40]
+2024-04-30 18:30:41:335 LL1 LogManager.java:25 LL(1)? true
+2024-04-30 18:30:41:335 LL1 LogManager.java:25 
+DECISION 11 in rule print
+2024-04-30 18:30:41:335 LL1 LogManager.java:25 look=[26, 24]
+2024-04-30 18:30:41:336 LL1 LogManager.java:25 LL(1)? true
+2024-04-30 18:30:41:336 LL1 LogManager.java:25 
+DECISION 12 in rule print
+2024-04-30 18:30:41:336 LL1 LogManager.java:25 look=[7, 7]
+2024-04-30 18:30:41:336 LL1 LogManager.java:25 LL(1)? false
+2024-04-30 18:30:41:336 LL1 LogManager.java:25 
+DECISION 13 in rule declaration
+2024-04-30 18:30:41:336 LL1 LogManager.java:25 look=[17, 25]
+2024-04-30 18:30:41:336 LL1 LogManager.java:25 LL(1)? true
+2024-04-30 18:30:41:336 LL1 LogManager.java:25 
+DECISION 14 in rule expr
+2024-04-30 18:30:41:336 LL1 LogManager.java:25 look=[15, 22]
+2024-04-30 18:30:41:336 LL1 LogManager.java:25 LL(1)? true
+2024-04-30 18:30:41:336 LL1 LogManager.java:25 
+DECISION 15 in rule expr
+2024-04-30 18:30:41:336 LL1 LogManager.java:25 look=[{15, 22}, 23, 21]
+2024-04-30 18:30:41:336 LL1 LogManager.java:25 LL(1)? true
+2024-04-30 18:30:41:337 LL1 LogManager.java:25 
+DECISION 16 in rule expr
+2024-04-30 18:30:41:337 LL1 LogManager.java:25 look=[null, null, null]
+2024-04-30 18:30:41:337 LL1 LogManager.java:25 LL(1)? false
+2024-04-30 18:30:41:337 LL1 LogManager.java:25 
+DECISION 17 in rule expr
+2024-04-30 18:30:41:338 LL1 LogManager.java:25 look=[null, null]
+2024-04-30 18:30:41:338 LL1 LogManager.java:25 LL(1)? false
+2024-04-30 18:30:41:374 action-translator LogManager.java:25 translate 
+2024-04-30 18:30:41:377 action-translator LogManager.java:25 translate this.precpred(this._ctx, 4)
+2024-04-30 18:30:41:380 action-translator LogManager.java:25 translate this.precpred(this._ctx, 4)
+2024-04-30 18:30:41:385 action-translator LogManager.java:25 translate 
+2024-04-30 18:30:41:386 action-translator LogManager.java:25 translate this.precpred(this._ctx, 6)
+2024-04-30 18:30:41:387 action-translator LogManager.java:25 translate this.precpred(this._ctx, 5)
+2024-04-30 18:30:41:387 action-translator LogManager.java:25 translate this.precpred(this._ctx, 3)
+2024-04-30 18:30:41:388 action-translator LogManager.java:25 translate this.precpred(this._ctx, 6)
+2024-04-30 18:30:41:388 action-translator LogManager.java:25 translate this.precpred(this._ctx, 5)
+2024-04-30 18:30:41:388 action-translator LogManager.java:25 translate this.precpred(this._ctx, 3)

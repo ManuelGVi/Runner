@@ -58,6 +58,12 @@ export default class CustomVisitor extends DictioVisitor {
             return false;
          }
       }
+      visitResiduo(ctx){
+        const left = this.visit(ctx.expr(0));
+        const right = this.visit(ctx.expr(1));
+        return left % right; 
+
+    }
   
   
       // Visit a parse tree produced by DictioParser#andor.

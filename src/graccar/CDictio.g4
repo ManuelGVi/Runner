@@ -10,6 +10,7 @@ ciclowhile:WHILE PARENO condition PARENC LLAVEO contenido change LLAVECL;
 
 elseif: 
 SINO SI PARENO condition PARENC LLAVEO contenido LLAVECL (elseif|elsesimple)?;
+
 elsesimple:SINO LLAVEO contenido LLAVECL;
 
 
@@ -19,7 +20,9 @@ condition op=(Y|O)+ condition #yo
 |(TRUE|FALSE)#truefalse
 |PARENO condition PARENC #conditionparens;
 
-print: PRINTF PARENO (textobteiner|expr) (COMMA (expr|textobteiner))* PARENC SEMICOLON;
+print: PRINTF PARENO (textobteiner|expr) PARENC SEMICOLON
+| PRINTF PARENO (textobteiner|expr) (COMMA (expr|textobteiner))* PARENC SEMICOLON;
+
 
 declaration: INT IDS (EQUAL expr)? SEMICOLON;
 
@@ -29,6 +32,7 @@ expr:
  expr operation=(MUL|DIV) expr      #timesdiv
 | expr operation=(ADD|SUB) expr   #sumaresta
 | SUB? NUM #int
+| expr PER expr #residual
 | PARENO expr PARENC #exprparens
 | IDS  #ids 
 ;
@@ -74,5 +78,6 @@ Y: '&&';
 O: '||';
 INCREMENT: '++';
 DECREMENT:'--';
+PER: '%';
 RETURN:'return';
 TEXT:COMILLAS ~["\r\n]* COMILLAS;

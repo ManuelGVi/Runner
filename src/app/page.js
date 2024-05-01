@@ -90,7 +90,7 @@ const RunnerCompilator = () => {
           <textarea
             value={input1}
             onChange={handleInputChange1}
-            placeholder="Escribe tu código aquí..."
+            placeholder="Runner Code"
           />
         </div>
         <div className="code-input">
@@ -100,7 +100,7 @@ const RunnerCompilator = () => {
           <textarea
             value={input2}
             onChange={handleInputChange2}
-            placeholder="Segundo textarea..."
+            placeholder="C Code"
           />
         </div>
       </div>
